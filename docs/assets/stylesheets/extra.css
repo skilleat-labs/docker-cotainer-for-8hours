@@ -1,0 +1,17 @@
+:root {
+  --md-primary-fg-color: #1D6FE0;
+  --md-primary-fg-color--light: #4A8BE8;
+  --md-primary-fg-color--dark: #1557B0;
+  --md-accent-fg-color: #C0392B;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #1D6FE0;
+  --md-accent-fg-color: #E8705F;
+}
+
+/* 표 가독성 */
+.md-typeset table:not([class]) th {
+  background-color: var(--md-primary-fg-color);
+  color: #fff;
+}
