@@ -7,3 +7,6 @@ site/
 # stray downloads
 awscliv2.zip
 aws/
+
+# quiz/word files (do not publish)
+*.docx
