@@ -12,13 +12,11 @@
         <meta name="author" content="Skilleat">
       
       
-        <link rel="canonical" href="https://skilleat-labs.github.io/docker-cotainer-for-8hours/day1/03-container-practice/">
+        <link rel="canonical" href="https://skilleat-labs.github.io/docker-cotainer-for-8hours/day1/05-ecr-push-challenge/">
       
       
-        <link rel="prev" href="../02-container/">
+        <link rel="prev" href="../04-ecr-registry/">
       
-      
-        <link rel="next" href="../04-ecr-registry/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>1-3. 컨테이너는 프로세스다 & 복습 과제 - Docker 컨테이너 실습 (8시간)</title>
+        <title>1-5. [과제] 내 이미지 ECR에 push - Docker 컨테이너 실습 (8시간)</title>
       
     
     
@@ -82,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-3" class="md-skip">
+        <a href="#1-5-ecr-push" class="md-skip">
           콘텐츠로 이동
         </a>
       
@@ -118,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1-3. 컨테이너는 프로세스다 & 복습 과제
+              1-5. [과제] 내 이미지 ECR에 push
             
           </span>
         </div>
@@ -428,37 +426,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1-3. 컨테이너는 프로세스다 & 복습 과제
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../03-container-practice/" class="md-nav__link">
         
   
   
@@ -474,159 +445,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="목차">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      목차
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 목표
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1) 컨테이너는 결국 '프로세스' 하나다
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1) 컨테이너는 결국 &#39;프로세스&#39; 하나다">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 ① 바로 죽는 컨테이너
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 ② 왜 죽었는지 확인
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 ③ 살아있게 만들기 — 할 일을 계속 주기
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-stop-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 ④ stop / start 로 껐다 켜기
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 ⑤ "그냥 계속 떠 있게" 하는 무한 유지 패턴
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        정리
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2) 복습 과제
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2) 복습 과제">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        문제 1. 컨테이너 실행
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        문제 2. 컨테이너 내부 파일 확인
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -664,10 +482,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../05-ecr-push-challenge/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1-5. [과제] 내 이미지 ECR에 push
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -683,6 +528,48 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        과제
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        확인
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -725,7 +612,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        실습 목표
+        과제
       
     </span>
   </a>
@@ -733,124 +620,13 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1) 컨테이너는 결국 '프로세스' 하나다
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1) 컨테이너는 결국 &#39;프로세스&#39; 하나다">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 ① 바로 죽는 컨테이너
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 ② 왜 죽었는지 확인
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 ③ 살아있게 만들기 — 할 일을 계속 주기
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-stop-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 ④ stop / start 로 껐다 켜기
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 ⑤ "그냥 계속 떠 있게" 하는 무한 유지 패턴
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        정리
+        확인
       
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2) 복습 과제
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2) 복습 과제">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        문제 1. 컨테이너 실행
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        문제 2. 컨테이너 내부 파일 확인
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -874,103 +650,33 @@
   
 
 
-<h1 id="1-3">1-3. 컨테이너는 '프로세스'다 &amp; 복습 과제<a class="headerlink" href="#1-3" title="Permanent link">&para;</a></h1>
-<h2 id="_1">실습 목표<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ul>
-<li>컨테이너가 <strong>실행되자마자 죽는 이유</strong>를 이해한다</li>
-<li><code>docker ps</code> 와 <code>docker ps -a</code> 의 차이를 몸으로 안다</li>
-<li>컨테이너를 <strong>계속 살아있게</strong> 만드는 방법을 안다</li>
-</ul>
+<h1 id="1-5-ecr-push">1-5. [과제] 내 이미지를 ECR에 push 하기<a class="headerlink" href="#1-5-ecr-push" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">이번엔 직접 올려봅니다 (pull ↔ push)</p>
+<p>1-4에서는 이미지를 <strong>내려받기(pull)</strong> 만 했죠. 이번 과제는 반대로, 이미지를 <strong>올려보기(push)</strong> 입니다.
+로그인은 1-4에서 이미 해뒀으니 권한은 있습니다. <strong>명령을 스스로 조합</strong>해서 완성해 보세요!</p>
+</div>
+<details class="note">
+<summary>(강사용) 사전 준비 — 학생은 건너뛰세요</summary>
+<p>학생용 리포지토리를 만들고, 학생 키가 <strong>이 리포에만 push</strong> 되도록 권한을 스코프합니다.</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 1) 학생용 리포 생성</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>aws<span class="w"> </span>ecr<span class="w"> </span>create-repository<span class="w"> </span>--repository-name<span class="w"> </span>skilleat/student<span class="w"> </span>--region<span class="w"> </span>ap-northeast-2
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># 2) 학생 키(ecr-student)에 &#39;student 리포에만 push&#39; 인라인 정책 부여</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>aws<span class="w"> </span>iam<span class="w"> </span>put-user-policy<span class="w"> </span>--user-name<span class="w"> </span>ecr-student<span class="w"> </span>--policy-name<span class="w"> </span>PushToStudentRepoOnly<span class="w"> </span>--policy-document<span class="w"> </span><span class="s1">&#39;{</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="s1">  &quot;Version&quot;: &quot;2012-10-17&quot;,</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="s1">  &quot;Statement&quot;: [{</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="s1">    &quot;Effect&quot;: &quot;Allow&quot;,</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="s1">    &quot;Action&quot;: [&quot;ecr:InitiateLayerUpload&quot;,&quot;ecr:UploadLayerPart&quot;,&quot;ecr:CompleteLayerUpload&quot;,&quot;ecr:PutImage&quot;,&quot;ecr:BatchCheckLayerAvailability&quot;],</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="s1">    &quot;Resource&quot;: &quot;arn:aws:ecr:ap-northeast-2:002029411360:repository/skilleat/student&quot;</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="s1">  }]</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="s1">}&#39;</span>
+</code></pre></div>
+<p>→ 학생은 어디서나 pull + <code>skilleat/student</code>에만 push. 선생님의 <code>skilleat/lab</code>은 못 건드립니다.</p>
+</details>
 <hr />
-<h2 id="1">1) 컨테이너는 결국 '프로세스' 하나다<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<p>컨테이너는 특별한 가상 컴퓨터가 아니라, <strong>격리된 프로세스 하나</strong>입니다.
-프로세스는 <strong>할 일이 끝나면 종료</strong>되죠. 컨테이너도 똑같습니다 —
-<strong>안에서 실행한 명령(프로세스)이 끝나면, 컨테이너도 함께 죽습니다.</strong></p>
-<h3 id="1_1">실습 ① 바로 죽는 컨테이너<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>bye<span class="w"> </span>alpine<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span>
-</code></pre></div>
-<p><code>echo</code> 는 한 줄 출력하고 <strong>즉시 끝나는</strong> 명령입니다. 그래서 컨테이너도 곧바로 종료됩니다.</p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>ps<span class="w">        </span><span class="c1"># 아무것도 안 보임 — 실행 중인 컨테이너가 없다</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>docker<span class="w"> </span>ps<span class="w"> </span>-a<span class="w">     </span><span class="c1"># bye 가 &#39;Exited&#39; 상태로 보인다</span>
-</code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">docker ps vs docker ps -a</p>
-<ul>
-<li><code>docker ps</code> : <strong>지금 살아서 실행 중</strong>인 컨테이너만 보여줌</li>
-<li><code>docker ps -a</code> : <strong>종료된(Exited) 것까지 전부</strong> 보여줌</li>
-</ul>
-<p>→ <code>bye</code> 는 이미 죽었으므로 <code>ps</code> 엔 안 나오고, <code>ps -a</code> 에만 나옵니다.</p>
-</div>
-<h3 id="2">실습 ② 왜 죽었는지 확인<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>logs<span class="w"> </span>bye<span class="w">     </span><span class="c1"># hello 가 출력됨 (할 일을 다 하고 끝난 것)</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>docker<span class="w"> </span>ps<span class="w"> </span>-a<span class="w">        </span><span class="c1"># STATUS 열: Exited (0)  →  0 = 정상 종료</span>
-</code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">핵심</p>
-<p>컨테이너가 죽은 건 <strong>에러가 아니라</strong>, 안의 프로세스(<code>echo</code>)가 <strong>할 일을 마쳐서</strong> 입니다.
-<strong>"할 일이 없으면 죽는다"</strong> — 이게 컨테이너의 본질입니다.</p>
-</div>
-<h3 id="3">실습 ③ 살아있게 만들기 — 할 일을 계속 주기<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
-<p><strong>방법 A. 재우기(sleep) — 300초 동안 안 죽음</strong></p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>sleeper<span class="w"> </span>alpine<span class="w"> </span>sleep<span class="w"> </span><span class="m">300</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>docker<span class="w"> </span>ps<span class="w">            </span><span class="c1"># sleeper 가 실행 중으로 보인다</span>
-</code></pre></div>
-<p><strong>방법 B. 계속 도는 서버 프로세스(nginx)</strong></p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>web<span class="w"> </span>nginx
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>docker<span class="w"> </span>ps<span class="w">            </span><span class="c1"># nginx 는 웹서버라 계속 떠 있다</span>
-</code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">차이가 보이나요?</p>
-<p><code>echo</code> 는 할 일이 끝나 죽었고, <code>sleep</code>·<code>nginx</code> 는 <strong>계속 할 일이 있어서</strong> 안 죽습니다.
-<code>-d</code> 는 백그라운드 실행 옵션일 뿐이고, <strong>죽고 사는 것은 '안의 프로세스가 계속 도는지'</strong> 로 결정됩니다.</p>
-</div>
-<h3 id="4-stop-start">실습 ④ stop / start 로 껐다 켜기<a class="headerlink" href="#4-stop-start" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>stop<span class="w"> </span>sleeper<span class="w">   </span><span class="c1"># 프로세스를 멈춤 → Exited</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>docker<span class="w"> </span>ps<span class="w">             </span><span class="c1"># 안 보임</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>docker<span class="w"> </span>ps<span class="w"> </span>-a<span class="w">          </span><span class="c1"># Exited 상태로 남아 있음</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>docker<span class="w"> </span>start<span class="w"> </span>sleeper<span class="w">  </span><span class="c1"># 다시 실행</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>docker<span class="w"> </span>ps<span class="w">             </span><span class="c1"># 다시 실행 중</span>
-</code></pre></div>
-<h3 id="5">실습 ⑤ "그냥 계속 떠 있게" 하는 무한 유지 패턴<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>forever<span class="w"> </span>alpine<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;while true; do sleep 60; done&quot;</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>docker<span class="w"> </span>ps
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">이건 왜 안 죽나요?</p>
-<p><code>while true</code> 로 <strong>끝나지 않는 할 일</strong>을 만들었기 때문입니다. 프로세스가 계속 도니 컨테이너도 안 죽죠.
-실무에서 "특별한 서버는 없지만 컨테이너를 계속 띄워두고 싶을 때" 쓰는 패턴입니다.</p>
-</div>
-<h3 id="_2">정리<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>명령</th>
-<th>뜻</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>docker ps</code></td>
-<td>실행 중(살아있는) 컨테이너만</td>
-</tr>
-<tr>
-<td><code>docker ps -a</code></td>
-<td>종료된 것까지 전부</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>컨테이너 = <strong>격리된 프로세스</strong>. 안의 명령이 끝나면 컨테이너도 끝난다.</li>
-<li>계속 떠 있으려면 <strong>계속 실행되는 프로세스</strong>(서버 · <code>sleep</code> · 무한 루프)가 있어야 한다.</li>
-</ul>
-<p><strong>실습 정리(삭제):</strong></p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>bye<span class="w"> </span>sleeper<span class="w"> </span>web<span class="w"> </span>forever
-</code></pre></div>
-<hr />
-<h2 id="2_1">2) 복습 과제<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h2>
-<p>앞의 내용을 바탕으로, 아래 과제를 스스로 해결해 보세요.</p>
-<h3 id="1_2">문제 1. 컨테이너 실행<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
-<p>다음 조건에 맞춰 컨테이너를 실행하세요.</p>
+<h2 id="_1">과제<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Docker Hub에서 <code>alpine:latest</code> 를 가져와, 아래 정보로 <strong>강사 ECR에 push</strong> 하세요.</p>
 <table>
 <thead>
 <tr>
@@ -980,37 +686,58 @@
 </thead>
 <tbody>
 <tr>
-<td>이미지</td>
-<td><code>docker/getting-started</code></td>
+<td>원본 이미지</td>
+<td><code>alpine:latest</code>  (Docker Hub에서 pull)</td>
+</tr>
+<tr>
+<td>레지스트리 주소</td>
+<td><code>002029411360.dkr.ecr.ap-northeast-2.amazonaws.com</code></td>
+</tr>
+<tr>
+<td>리포지토리</td>
+<td><code>skilleat/student</code></td>
 </tr>
 <tr>
 <td>태그</td>
-<td>지정하지 않음</td>
-</tr>
-<tr>
-<td>컨테이너 이름</td>
-<td><code>guide</code></td>
-</tr>
-<tr>
-<td>컨테이너 서비스 포트</td>
-<td><code>80</code></td>
-</tr>
-<tr>
-<td>호스트 포트</td>
-<td><code>1234</code></td>
-</tr>
-<tr>
-<td>실행 방식</td>
-<td>백그라운드</td>
+<td><strong>본인 이니셜</strong> (예: <code>nrk</code>)</td>
 </tr>
 </tbody>
 </table>
-<p>실행 후 본인 VM의 <code>192.168.x.x:1234</code>로 브라우저에서 접속해 정상적으로 페이지가 뜨는지 확인하세요.</p>
-<h3 id="2_2">문제 2. 컨테이너 내부 파일 확인<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
-<p>실행 중인 <code>guide</code> 컨테이너 내부에 접속해서 <code>/usr/share/nginx/html/50x.html</code> 파일을 열고, <code>&lt;title&gt;</code> 태그 안에 들어간 문구가 무엇인지 찾아내세요.</p>
+<p><strong>해야 할 일</strong></p>
+<ol>
+<li>Docker Hub에서 <code>alpine:latest</code> 를 pull 한다</li>
+<li>위 세 값(주소 · 리포지토리 · 태그)을 <strong>조합해서</strong> ECR 주소로 태깅한다</li>
+<li>push 한다</li>
+</ol>
 <div class="admonition tip">
-<p class="admonition-title">힌트</p>
-<p>이 컨테이너에는 <code>bash</code>가 없으므로 <code>sh</code>로 접속하세요.</p>
+<p class="admonition-title">힌트 — 이미지 주소 형식 (1-4에서 배운 것)</p>
+<p><div class="language-text highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>&lt;레지스트리 주소&gt; / &lt;리포지토리&gt; : &lt;태그&gt;
+</code></pre></div>
+위 표의 세 값을 이 형식에 끼워 맞추면 내 이미지 주소가 완성됩니다.</p>
+</div>
+<hr />
+<h2 id="_2">확인<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>내 이니셜 태그가 올라갔는지 확인하세요.</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>aws<span class="w"> </span>ecr<span class="w"> </span>list-images<span class="w"> </span>--repository-name<span class="w"> </span>skilleat/student<span class="w"> </span>--region<span class="w"> </span>ap-northeast-2
+</code></pre></div>
+<p>또는 ECR 콘솔의 <code>skilleat/student</code> 리포지토리에서 <strong>본인 이니셜 태그</strong>가 보이면 성공입니다.</p>
+<div class="admonition warning">
+<p class="admonition-title">push할 때 인증 오류(<code>denied</code> / <code>not authorized</code>)가 나면</p>
+<p>ECR 로그인 토큰은 <strong>12시간</strong>이면 만료됩니다. 아래로 다시 로그인한 뒤 push 하세요.</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>aws<span class="w"> </span>ecr<span class="w"> </span>get-login-password<span class="w"> </span>--region<span class="w"> </span>ap-northeast-2<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>docker<span class="w"> </span>login<span class="w"> </span>--username<span class="w"> </span>AWS<span class="w"> </span>--password-stdin<span class="w"> </span><span class="m">002029411360</span>.dkr.ecr.ap-northeast-2.amazonaws.com
+</code></pre></div>
+</div>
+<details class="success">
+<summary>막히면 열어보기 — 정답 (본인 이니셜을 nrk 라고 할 때)</summary>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>pull<span class="w"> </span>alpine:latest
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>docker<span class="w"> </span>tag<span class="w">  </span>alpine:latest<span class="w"> </span><span class="m">002029411360</span>.dkr.ecr.ap-northeast-2.amazonaws.com/skilleat/student:nrk
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>docker<span class="w"> </span>push<span class="w"> </span><span class="m">002029411360</span>.dkr.ecr.ap-northeast-2.amazonaws.com/skilleat/student:nrk
+</code></pre></div>
+</details>
+<div class="admonition note">
+<p class="admonition-title">이니셜이 겹치면?</p>
+<p>같은 이니셜이면 태그가 덮어써집니다. 겹치면 <code>nrk2</code> 처럼 숫자를 붙이세요.</p>
 </div>
 
 
