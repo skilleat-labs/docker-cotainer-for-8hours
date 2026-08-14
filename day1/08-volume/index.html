@@ -12,13 +12,11 @@
         <meta name="author" content="Skilleat">
       
       
-        <link rel="canonical" href="https://skilleat-labs.github.io/docker-cotainer-for-8hours/day1/03-container-practice/">
+        <link rel="canonical" href="https://skilleat-labs.github.io/docker-cotainer-for-8hours/day1/08-volume/">
       
       
-        <link rel="prev" href="../02-container/">
+        <link rel="prev" href="../07-multistage/">
       
-      
-        <link rel="next" href="../04-ecr-registry/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>1-3. 컨테이너는 프로세스다 & 복습 과제 - Docker 컨테이너 실습 (8시간)</title>
+        <title>1-8. Docker 볼륨 — 데이터 지키기 - Docker 컨테이너 실습 (8시간)</title>
       
     
     
@@ -82,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-3" class="md-skip">
+        <a href="#1-8-docker" class="md-skip">
           콘텐츠로 이동
         </a>
       
@@ -118,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1-3. 컨테이너는 프로세스다 & 복습 과제
+              1-8. Docker 볼륨 — 데이터 지키기
             
           </span>
         </div>
@@ -428,37 +426,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1-3. 컨테이너는 프로세스다 & 복습 과제
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../03-container-practice/" class="md-nav__link">
         
   
   
@@ -474,159 +445,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="목차">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      목차
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 목표
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1) 컨테이너는 결국 '프로세스' 하나다
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1) 컨테이너는 결국 &#39;프로세스&#39; 하나다">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 ① 바로 죽는 컨테이너
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 ② 왜 죽었는지 확인
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 ③ 살아있게 만들기 — 할 일을 계속 주기
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-stop-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 ④ stop / start 로 껐다 켜기
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 ⑤ "그냥 계속 떠 있게" 하는 무한 유지 패턴
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        정리
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2) 복습 과제
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2) 복습 과제">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        문제 1. 컨테이너 실행
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        문제 2. 컨테이너 내부 파일 확인
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -776,10 +594,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../08-volume/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1-8. Docker 볼륨 — 데이터 지키기
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -795,6 +640,92 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실습 목표
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) 문제 체감 — 볼륨 없이 데이터를 넣으면
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-named-volume" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) 해결 — Named Volume 으로 데이터 지키기
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) 실전 실험 — DB 데이터 영속성
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-bind-mount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) Bind Mount — 호스트 폴더를 직접 연결
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-named-volume-vs-bind-mount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) 정리 — Named Volume vs Bind Mount
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -848,121 +779,54 @@
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1) 컨테이너는 결국 '프로세스' 하나다
+        1) 문제 체감 — 볼륨 없이 데이터를 넣으면
       
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="1) 컨테이너는 결국 &#39;프로세스&#39; 하나다">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 ① 바로 죽는 컨테이너
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 ② 왜 죽었는지 확인
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 ③ 살아있게 만들기 — 할 일을 계속 주기
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-stop-start" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 ④ stop / start 로 껐다 켜기
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 ⑤ "그냥 계속 떠 있게" 하는 무한 유지 패턴
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        정리
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#2_1" class="md-nav__link">
+  <a href="#2-named-volume" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2) 복습 과제
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2) 복습 과제">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        문제 1. 컨테이너 실행
+        2) 해결 — Named Volume 으로 데이터 지키기
       
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#2_2" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#3-db" class="md-nav__link">
     <span class="md-ellipsis">
       
-        문제 2. 컨테이너 내부 파일 확인
+        3) 실전 실험 — DB 데이터 영속성
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#4-bind-mount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) Bind Mount — 호스트 폴더를 직접 연결
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-named-volume-vs-bind-mount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) 정리 — Named Volume vs Bind Mount
+      
+    </span>
+  </a>
   
 </li>
       
@@ -986,144 +850,125 @@
   
 
 
-<h1 id="1-3">1-3. 컨테이너는 '프로세스'다 &amp; 복습 과제<a class="headerlink" href="#1-3" title="Permanent link">&para;</a></h1>
+<h1 id="1-8-docker">1-8. Docker 볼륨 — 데이터를 지키기<a class="headerlink" href="#1-8-docker" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">컨테이너는 일회용, 데이터는 영구</p>
+<p>컨테이너는 언제든 버리고 새로 만드는 것입니다. 그런데 컨테이너를 지우면 <strong>안의 데이터도 사라져요.</strong>
+이번 실습은 <strong>볼륨(Volume)</strong> 으로 데이터를 컨테이너 밖에 저장해, 지워도 살아남게 만드는 실험입니다.</p>
+</div>
 <h2 id="_1">실습 목표<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>컨테이너가 <strong>실행되자마자 죽는 이유</strong>를 이해한다</li>
-<li><code>docker ps</code> 와 <code>docker ps -a</code> 의 차이를 몸으로 안다</li>
-<li>컨테이너를 <strong>계속 살아있게</strong> 만드는 방법을 안다</li>
+<li>컨테이너를 지우면 데이터가 사라지는 것을 <strong>직접 확인</strong>한다</li>
+<li><strong>볼륨</strong>으로 데이터가 유지되는 것을 실험으로 체감한다</li>
+<li>Named Volume 과 Bind Mount 를 구분한다</li>
 </ul>
 <hr />
-<h2 id="1">1) 컨테이너는 결국 '프로세스' 하나다<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<p>컨테이너는 특별한 가상 컴퓨터가 아니라, <strong>격리된 프로세스 하나</strong>입니다.
-프로세스는 <strong>할 일이 끝나면 종료</strong>되죠. 컨테이너도 똑같습니다 —
-<strong>안에서 실행한 명령(프로세스)이 끝나면, 컨테이너도 함께 죽습니다.</strong></p>
-<h3 id="1_1">실습 ① 바로 죽는 컨테이너<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>run<span class="w"> </span>--name<span class="w"> </span>bye<span class="w"> </span>alpine<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span>
+<h2 id="1">1) 문제 체감 — 볼륨 없이 데이터를 넣으면<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>novol<span class="w"> </span>alpine<span class="w"> </span>sh
 </code></pre></div>
-<p><code>echo</code> 는 한 줄 출력하고 <strong>즉시 끝나는</strong> 명령입니다. 그래서 컨테이너도 곧바로 종료됩니다.</p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>ps<span class="w">        </span><span class="c1"># 아무것도 안 보임 — 실행 중인 컨테이너가 없다</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>docker<span class="w"> </span>ps<span class="w"> </span>-a<span class="w">     </span><span class="c1"># bye 가 &#39;Exited&#39; 상태로 보인다</span>
+<p>컨테이너 안에서 파일을 만들고 나옵니다.</p>
+<div class="language-sh highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/data.txt
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>cat<span class="w"> </span>/data.txt<span class="w">        </span><span class="c1"># → hello</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">exit</span>
 </code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">docker ps vs docker ps -a</p>
-<ul>
-<li><code>docker ps</code> : <strong>지금 살아서 실행 중</strong>인 컨테이너만 보여줌</li>
-<li><code>docker ps -a</code> : <strong>종료된(Exited) 것까지 전부</strong> 보여줌</li>
-</ul>
-<p>→ <code>bye</code> 는 이미 죽었으므로 <code>ps</code> 엔 안 나오고, <code>ps -a</code> 에만 나옵니다.</p>
+<p>컨테이너를 지우고 <strong>다시 만들어</strong> 확인합니다.</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>rm<span class="w"> </span>novol
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>novol<span class="w"> </span>alpine<span class="w"> </span>sh
+</code></pre></div>
+<div class="language-sh highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>cat<span class="w"> </span>/data.txt<span class="w">        </span><span class="c1"># → No such file  (사라짐!)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">exit</span>
+</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>rm<span class="w"> </span>novol
+</code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">확인</p>
+<p>컨테이너를 지웠다 다시 만드니 데이터가 <strong>사라졌습니다.</strong> DB라면 큰일이죠.</p>
 </div>
-<h3 id="2">실습 ② 왜 죽었는지 확인<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>logs<span class="w"> </span>bye<span class="w">     </span><span class="c1"># hello 가 출력됨 (할 일을 다 하고 끝난 것)</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>docker<span class="w"> </span>ps<span class="w"> </span>-a<span class="w">        </span><span class="c1"># STATUS 열: Exited (0)  →  0 = 정상 종료</span>
+<hr />
+<h2 id="2-named-volume">2) 해결 — Named Volume 으로 데이터 지키기<a class="headerlink" href="#2-named-volume" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>volume<span class="w"> </span>create<span class="w"> </span>mydata
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>app<span class="w"> </span>-v<span class="w"> </span>mydata:/data<span class="w"> </span>alpine<span class="w"> </span>sh
 </code></pre></div>
-<div class="admonition tip">
-<p class="admonition-title">핵심</p>
-<p>컨테이너가 죽은 건 <strong>에러가 아니라</strong>, 안의 프로세스(<code>echo</code>)가 <strong>할 일을 마쳐서</strong> 입니다.
-<strong>"할 일이 없으면 죽는다"</strong> — 이게 컨테이너의 본질입니다.</p>
+<p>볼륨이 연결된 <code>/data</code> 에 파일을 저장합니다.</p>
+<div class="language-sh highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;keep me&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/data/file.txt
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>cat<span class="w"> </span>/data/file.txt<span class="w">   </span><span class="c1"># → keep me</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">exit</span>
+</code></pre></div>
+<p>컨테이너를 <strong>지우고</strong>, 같은 볼륨으로 <strong>새 컨테이너</strong>를 만듭니다.</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker<span class="w"> </span>rm<span class="w"> </span>app
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>app2<span class="w"> </span>-v<span class="w"> </span>mydata:/data<span class="w"> </span>alpine<span class="w"> </span>sh
+</code></pre></div>
+<div class="language-sh highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>cat<span class="w"> </span>/data/file.txt<span class="w">   </span><span class="c1"># → keep me  (살아있음!)</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">exit</span>
+</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>docker<span class="w"> </span>rm<span class="w"> </span>app2
+</code></pre></div>
+<div class="admonition success">
+<p class="admonition-title">확인</p>
+<p>컨테이너를 새로 만들었는데도 데이터가 <strong>그대로</strong>입니다. 볼륨은 컨테이너 수명과 <strong>분리</strong>되어 있으니까요.</p>
 </div>
-<h3 id="3">실습 ③ 살아있게 만들기 — 할 일을 계속 주기<a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
-<p><strong>방법 A. 재우기(sleep) — 300초 동안 안 죽음</strong></p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>sleeper<span class="w"> </span>alpine<span class="w"> </span>sleep<span class="w"> </span><span class="m">300</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>docker<span class="w"> </span>ps<span class="w">            </span><span class="c1"># sleeper 가 실행 중으로 보인다</span>
+<hr />
+<h2 id="3-db">3) 실전 실험 — DB 데이터 영속성<a class="headerlink" href="#3-db" title="Permanent link">&para;</a></h2>
+<p>진짜 DB로도 확인해봅시다. (재배포해도 데이터가 남는지)</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>docker<span class="w"> </span>volume<span class="w"> </span>create<span class="w"> </span>pgdata
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>db<span class="w"> </span>-e<span class="w"> </span><span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>pass<span class="w"> </span>-v<span class="w"> </span>pgdata:/var/lib/postgresql/data<span class="w"> </span>postgres:16
 </code></pre></div>
-<p><strong>방법 B. 계속 도는 서버 프로세스(nginx)</strong></p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>web<span class="w"> </span>nginx
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>docker<span class="w"> </span>ps<span class="w">            </span><span class="c1"># nginx 는 웹서버라 계속 떠 있다</span>
+<p>데이터를 한 건 넣습니다.</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>db<span class="w"> </span>psql<span class="w"> </span>-U<span class="w"> </span>postgres<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;CREATE TABLE t(v text); INSERT INTO t VALUES (&#39;hello volume&#39;);&quot;</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>db<span class="w"> </span>psql<span class="w"> </span>-U<span class="w"> </span>postgres<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;SELECT * FROM t;&quot;</span><span class="w">     </span><span class="c1"># → hello volume</span>
 </code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">차이가 보이나요?</p>
-<p><code>echo</code> 는 할 일이 끝나 죽었고, <code>sleep</code>·<code>nginx</code> 는 <strong>계속 할 일이 있어서</strong> 안 죽습니다.
-<code>-d</code> 는 백그라운드 실행 옵션일 뿐이고, <strong>죽고 사는 것은 '안의 프로세스가 계속 도는지'</strong> 로 결정됩니다.</p>
+<p>컨테이너를 <strong>강제 삭제</strong>하고, 같은 볼륨으로 <strong>다시</strong> 띄웁니다.</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>docker<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>db
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>db<span class="w"> </span>-e<span class="w"> </span><span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>pass<span class="w"> </span>-v<span class="w"> </span>pgdata:/var/lib/postgresql/data<span class="w"> </span>postgres:16
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>db<span class="w"> </span>psql<span class="w"> </span>-U<span class="w"> </span>postgres<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;SELECT * FROM t;&quot;</span><span class="w">     </span><span class="c1"># → hello volume  (유지!)</span>
+</code></pre></div>
+<div class="admonition success">
+<p class="admonition-title">재배포에도 데이터가 유지됩니다</p>
+<p>컨테이너를 통째로 지우고 새로 띄웠는데도 방금 넣은 데이터가 그대로죠. <strong>상태(데이터)와 컨테이너를 분리</strong>한 덕분입니다.</p>
 </div>
-<h3 id="4-stop-start">실습 ④ stop / start 로 껐다 켜기<a class="headerlink" href="#4-stop-start" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>stop<span class="w"> </span>sleeper<span class="w">   </span><span class="c1"># 프로세스를 멈춤 → Exited</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>docker<span class="w"> </span>ps<span class="w">             </span><span class="c1"># 안 보임</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>docker<span class="w"> </span>ps<span class="w"> </span>-a<span class="w">          </span><span class="c1"># Exited 상태로 남아 있음</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>docker<span class="w"> </span>start<span class="w"> </span>sleeper<span class="w">  </span><span class="c1"># 다시 실행</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>docker<span class="w"> </span>ps<span class="w">             </span><span class="c1"># 다시 실행 중</span>
+<hr />
+<h2 id="4-bind-mount">4) Bind Mount — 호스트 폴더를 직접 연결<a class="headerlink" href="#4-bind-mount" title="Permanent link">&para;</a></h2>
+<p>볼륨 말고, <strong>내 호스트(VM)의 폴더</strong>를 컨테이너에 직접 연결할 수도 있습니다.</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>mkdir<span class="w"> </span>~/hostdir<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;from host&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>~/hostdir/note.txt
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>-v<span class="w"> </span>~/hostdir:/mnt<span class="w"> </span>alpine<span class="w"> </span>cat<span class="w"> </span>/mnt/note.txt<span class="w">   </span><span class="c1"># → from host</span>
 </code></pre></div>
-<h3 id="5">실습 ⑤ "그냥 계속 떠 있게" 하는 무한 유지 패턴<a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>forever<span class="w"> </span>alpine<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;while true; do sleep 60; done&quot;</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>docker<span class="w"> </span>ps
-</code></pre></div>
-<div class="admonition note">
-<p class="admonition-title">이건 왜 안 죽나요?</p>
-<p><code>while true</code> 로 <strong>끝나지 않는 할 일</strong>을 만들었기 때문입니다. 프로세스가 계속 도니 컨테이너도 안 죽죠.
-실무에서 "특별한 서버는 없지만 컨테이너를 계속 띄워두고 싶을 때" 쓰는 패턴입니다.</p>
-</div>
-<h3 id="_2">정리<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>호스트에 있는 파일이 컨테이너 안 <code>/mnt</code> 에서 그대로 보입니다. (개발 중 소스 실시간 반영에 유용)</p>
+<hr />
+<h2 id="5-named-volume-vs-bind-mount">5) 정리 — Named Volume vs Bind Mount<a class="headerlink" href="#5-named-volume-vs-bind-mount" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>명령</th>
-<th>뜻</th>
+<th></th>
+<th>Named Volume</th>
+<th>Bind Mount</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>docker ps</code></td>
-<td>실행 중(살아있는) 컨테이너만</td>
+<td>저장 위치</td>
+<td><strong>Docker가 관리</strong>하는 공간</td>
+<td>호스트의 <strong>특정 폴더</strong></td>
 </tr>
 <tr>
-<td><code>docker ps -a</code></td>
-<td>종료된 것까지 전부</td>
+<td>지정 방법</td>
+<td><code>-v 이름:/컨테이너경로</code></td>
+<td><code>-v /호스트경로:/컨테이너경로</code></td>
+</tr>
+<tr>
+<td>주로 언제</td>
+<td><strong>운영 데이터</strong>(DB 등)</td>
+<td>개발 중 <strong>소스 실시간 반영</strong></td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li>컨테이너 = <strong>격리된 프로세스</strong>. 안의 명령이 끝나면 컨테이너도 끝난다.</li>
-<li>계속 떠 있으려면 <strong>계속 실행되는 프로세스</strong>(서버 · <code>sleep</code> · 무한 루프)가 있어야 한다.</li>
-</ul>
 <p><strong>실습 정리(삭제):</strong></p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>bye<span class="w"> </span>sleeper<span class="w"> </span>web<span class="w"> </span>forever
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>docker<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>db<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>docker<span class="w"> </span>volume<span class="w"> </span>rm<span class="w"> </span>mydata<span class="w"> </span>pgdata<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
 </code></pre></div>
-<hr />
-<h2 id="2_1">2) 복습 과제<a class="headerlink" href="#2_1" title="Permanent link">&para;</a></h2>
-<p>앞의 내용을 바탕으로, 아래 과제를 스스로 해결해 보세요.</p>
-<h3 id="1_2">문제 1. 컨테이너 실행<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h3>
-<p>다음 조건에 맞춰 컨테이너를 실행하세요.</p>
-<table>
-<thead>
-<tr>
-<th>항목</th>
-<th>값</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>이미지</td>
-<td><code>docker/getting-started</code></td>
-</tr>
-<tr>
-<td>태그</td>
-<td>지정하지 않음</td>
-</tr>
-<tr>
-<td>컨테이너 이름</td>
-<td><code>guide</code></td>
-</tr>
-<tr>
-<td>컨테이너 서비스 포트</td>
-<td><code>80</code></td>
-</tr>
-<tr>
-<td>호스트 포트</td>
-<td><code>1234</code></td>
-</tr>
-<tr>
-<td>실행 방식</td>
-<td>백그라운드</td>
-</tr>
-</tbody>
-</table>
-<p>실행 후 본인 VM의 <code>192.168.x.x:1234</code>로 브라우저에서 접속해 정상적으로 페이지가 뜨는지 확인하세요.</p>
-<h3 id="2_2">문제 2. 컨테이너 내부 파일 확인<a class="headerlink" href="#2_2" title="Permanent link">&para;</a></h3>
-<p>실행 중인 <code>guide</code> 컨테이너 내부에 접속해서 <code>/usr/share/nginx/html/50x.html</code> 파일을 열고, <code>&lt;title&gt;</code> 태그 안에 들어간 문구가 무엇인지 찾아내세요.</p>
-<div class="admonition tip">
-<p class="admonition-title">힌트</p>
-<p>이 컨테이너에는 <code>bash</code>가 없으므로 <code>sh</code>로 접속하세요.</p>
-</div>
+<ul>
+<li>컨테이너는 일회용, <strong>데이터는 볼륨으로 밖에</strong> 저장한다.</li>
+<li>Named Volume(운영 데이터) vs Bind Mount(개발 편의) 를 상황에 맞게.</li>
+</ul>
 
 
 
