@@ -71,8 +71,6 @@ plugins:
 # 숨김(draft) 목록 — 여기 있는 파일은 배포 사이트에서 제외(학생 접근 시 404).
 # 공개하려면: 아래 목록에서 해당 줄 삭제 + nav 주석 해제 후 재배포.
 draft_docs: |
-  day1/09-network.md
-  day1/09-1-challenge.md
   day1/10-compose-intro.md
   day1/11-compose-db.md
   day1/12-compose-challenge.md
@@ -90,9 +88,9 @@ nav:
       - "1-6-1. [도전과제] 나만의 앱 이미지 만들기": day1/06-1-challenge.md
       - "1-7. 멀티스테이지 빌드": day1/07-multistage.md
       - "1-8. Docker 볼륨 — 데이터 지키기": day1/08-volume.md
+      - "1-9. Docker 네트워크": day1/09-network.md
+      - "1-9-1. [도전과제] 미니 블로그 (docker 명령)": day1/09-1-challenge.md
       # ── 아래는 현재 '숨김' 상태. 공개할 때 주석(#) 해제 + 위 draft_docs에서 같은 파일 삭제 ──
-      # - "1-9. Docker 네트워크": day1/09-network.md
-      # - "1-9-1. [도전과제] 미니 블로그 (docker 명령)": day1/09-1-challenge.md
       # - "1-10. Docker Compose 맛보기": day1/10-compose-intro.md
       # - "1-11. Compose로 웹 도구 + DB 띄우기": day1/11-compose-db.md
       # - "1-12. [도전과제] 미니 블로그 완성하기": day1/12-compose-challenge.md
