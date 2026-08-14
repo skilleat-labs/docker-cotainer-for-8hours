@@ -76,6 +76,9 @@ draft_docs: |
   day1/07-multistage.md
   day1/08-volume.md
   day1/09-network.md
+  day1/10-compose-intro.md
+  day1/11-compose-db.md
+  day1/12-compose-challenge.md
 
 nav:
   - 소개: index.md
@@ -92,3 +95,6 @@ nav:
       # - "1-7. 멀티스테이지 빌드": day1/07-multistage.md
       # - "1-8. Docker 볼륨 — 데이터 지키기": day1/08-volume.md
       # - "1-9. Docker 네트워크": day1/09-network.md
+      # - "1-10. Docker Compose 맛보기": day1/10-compose-intro.md
+      # - "1-11. Compose로 웹 도구 + DB 띄우기": day1/11-compose-db.md
+      # - "1-12. [도전과제] 미니 블로그 완성하기": day1/12-compose-challenge.md
