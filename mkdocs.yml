@@ -78,7 +78,7 @@ draft_docs: |
 
 nav:
   - 소개: index.md
-  - 1일차 · Docker 기초:
+  - 실습:
       - "1-0. 사전 준비작업 (수업 전 설치)": day1/00-pre-setup.md
       - "1-1. VM 직접 체험 (VirtualBox)": day1/01-vm-virtualbox.md
       - "1-2. Docker 기본 명령어와 동작 원리": day1/02-container.md

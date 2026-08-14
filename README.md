@@ -6,8 +6,6 @@ Docker & 컨테이너 8시간 실습 교안 (MkDocs · Material).
 
 ## 구성
 
-**1일차 · Docker 기초**
-
 - 1-0. 사전 준비작업 (수업 전 설치)
 - 1-1. VM 직접 체험 (VirtualBox)
 - 1-2. Docker 기본 명령어와 동작 원리
