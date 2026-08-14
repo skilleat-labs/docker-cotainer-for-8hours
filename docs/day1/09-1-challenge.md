@@ -76,5 +76,45 @@ docker network inspect <네트워크이름>
 - [ ] backend 를 삭제 후 같은 볼륨으로 다시 실행해도 글이 그대로다
 - [ ] `docker network inspect` 로 frontend·backend 가 같은 네트워크임을 확인했다
 
+---
+
+??? success "정답 (docker 명령)"
+    **① 전용 네트워크 & 볼륨 만들기**
+    ```bash
+    docker network create blognet
+    docker volume create blogdata
+    ```
+
+    **② backend 먼저 실행** (이름 고정 + 볼륨 `/app` + 같은 네트워크)
+    ```bash
+    docker run -d --name backend-service --network blognet -v blogdata:/app skilleat/backend:v4-kb5
+    ```
+
+    **③ frontend 실행** (같은 네트워크 + 8080:80)
+    ```bash
+    docker run -d --name frontend --network blognet -p 8080:80 skilleat/frontend:v4-kb5
+    ```
+
+    **왜 이렇게?**
+
+    - `--name backend-service` : frontend 가 **이 이름으로** backend(:5000)를 찾습니다. → 이름 고정 필수
+    - `--network blognet` : 둘을 **같은 네트워크**에 넣어야 이름으로 통신됨 (기본 bridge는 이름 통신 X)
+    - `-v blogdata:/app` : `data.json` 을 **볼륨에 저장** → 컨테이너를 지워도 유지
+    - backend 를 **먼저** 실행해야 frontend 가 정상 동작
+
+    **데이터 유지 검증** (backend 삭제 후 같은 볼륨으로 재실행)
+    ```bash
+    docker rm -f backend-service
+    docker run -d --name backend-service --network blognet -v blogdata:/app skilleat/backend:v4-kb5
+    # → 같은 volume(blogdata)을 다시 붙였으니 data.json(글)이 그대로 남아 있음
+    ```
+
+    **정리(삭제)**
+    ```bash
+    docker rm -f frontend backend-service
+    docker network rm blognet
+    # docker volume rm blogdata   # 데이터까지 지우려면
+    ```
+
 !!! tip "다음 예고"
     지금 명령 4~5개로 한 걸, 곧 **`compose.yaml` 파일 하나**로 똑같이 만들어 봅니다. (1-10 ~ 1-12)
