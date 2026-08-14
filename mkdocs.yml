@@ -82,6 +82,7 @@ nav:
       - "1-4. 프라이빗 레지스트리 실습 (ECR)": day1/04-ecr-registry.md
       - "1-5. [과제] 내 이미지 ECR에 push": day1/05-ecr-push-challenge.md
       - "1-6. Dockerfile로 나만의 이미지 만들기": day1/06-dockerfile.md
+      - "1-6-1. [도전과제] 나만의 앱 이미지 만들기": day1/06-1-challenge.md
       - "1-7. 멀티스테이지 빌드": day1/07-multistage.md
       - "1-8. Docker 볼륨 — 데이터 지키기": day1/08-volume.md
       - "1-9. Docker 네트워크": day1/09-network.md
