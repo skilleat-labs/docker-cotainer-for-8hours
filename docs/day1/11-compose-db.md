@@ -84,6 +84,53 @@ docker compose up -d
 
 ---
 
+## 6) 도전과제 대비 — `container_name` 과 `networks`
+
+지금까지는 Compose가 컨테이너 이름도, 네트워크도 **알아서** 만들어 줬어요. 하지만 다음 도전과제에서는 이 둘을 **직접 지정**해야 합니다. 어렵지 않아요! 👇
+
+### ① `container_name` — 컨테이너 이름을 '내가' 고정하기
+
+Compose는 보통 컨테이너 이름을 `폴더명-서비스명-1` 처럼 **자동으로** 짓습니다.
+그런데 **다른 서비스가 특정 이름으로 찾아와야** 할 때는, 이름을 직접 고정합니다.
+
+```yaml
+services:
+  backend:
+    image: nginx:latest
+    container_name: backend-service    # ← 이 컨테이너 이름을 'backend-service' 로 고정
+```
+
+→ 이제 다른 컨테이너가 **`backend-service` 라는 이름으로** 이 컨테이너를 찾을 수 있어요.
+
+### ② `networks` — 네트워크를 '직접' 만들어 붙이기
+
+맨 아래에 `networks:` 로 네트워크를 **선언**하고, 각 서비스에 `networks:` 로 **연결**합니다.
+
+```yaml
+services:
+  backend:
+    image: nginx:latest
+    networks:
+      - mynet          # ← backend 를 mynet 에 연결
+  frontend:
+    image: httpd:latest
+    networks:
+      - mynet          # ← frontend 도 같은 mynet 에 연결
+
+networks:
+  mynet:               # ← 'mynet' 이라는 네트워크를 만든다
+```
+
+→ 두 서비스가 **같은 `mynet`** 에 있으니 서로 **이름으로 통신**할 수 있어요.
+(사실 Compose가 자동으로 만들어 주는 네트워크와 결과는 같아요. 여기선 **이름을 내가 정해서** 만든 것뿐이에요.)
+
+!!! tip "한눈에 정리"
+    - **`container_name`** : 컨테이너 이름을 내가 고정 → 다른 서비스가 그 이름으로 찾을 때 사용
+    - **`networks`** : 네트워크를 이름 지어 직접 만들고, 서비스들을 거기에 연결
+    - 이 둘 + 앞에서 배운 **`volumes`**(영속성) · **`depends_on`**(순서) 이면 **다음 도전과제(미니 블로그)** 를 풀 준비 끝! 💪
+
+---
+
 ## 정리 (삭제)
 
 ```bash
