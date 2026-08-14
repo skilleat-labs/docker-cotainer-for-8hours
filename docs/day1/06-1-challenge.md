@@ -86,12 +86,21 @@ http://192.168.56.10:5000
 
 1-4 / 1-5에서 배운 대로, 내 이미지에 **이니셜 태그**를 달아 올려봅니다.
 
+**① 먼저 ECR에 로그인** (로그인 토큰은 12시간이면 만료되니, 안 되면 다시 실행)
+
+```bash
+aws ecr get-login-password --region ap-northeast-2 \
+  | docker login --username AWS --password-stdin 002029411360.dkr.ecr.ap-northeast-2.amazonaws.com
+```
+
+`Login Succeeded` 가 뜨면 됩니다.
+
+**② 태그 달고 push**
+
 ```bash
 docker tag myapp:1.0 002029411360.dkr.ecr.ap-northeast-2.amazonaws.com/skilleat/student:이니셜
 docker push 002029411360.dkr.ecr.ap-northeast-2.amazonaws.com/skilleat/student:이니셜
 ```
-
-> 인증 오류(`denied`)가 나면 ECR에 다시 로그인한 뒤 push 하세요. (1-4 참고)
 
 ---
 
