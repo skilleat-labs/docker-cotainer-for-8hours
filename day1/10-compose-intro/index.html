@@ -754,10 +754,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1-compose-before-after" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1) 준비
+        1) 왜 Compose를 쓰나? (before / after)
       
     </span>
   </a>
@@ -765,10 +765,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-composeyaml" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2) compose.yaml 작성
+        2) 준비
       
     </span>
   </a>
@@ -776,10 +776,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#3-composeyaml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3) 한 번에 띄우기
+        3) compose.yaml 작성 &amp; 한 줄씩 이해하기
       
     </span>
   </a>
@@ -790,7 +790,40 @@
   <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4) 로그 보고, 한 번에 내리기
+        4) 한 번에 띄우기
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) 안을 들여다보기
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6) 한 번에 내리기
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        자주 쓰는 Compose 명령어
       
     </span>
   </a>
@@ -890,10 +923,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#1-compose-before-after" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1) 준비
+        1) 왜 Compose를 쓰나? (before / after)
       
     </span>
   </a>
@@ -901,10 +934,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-composeyaml" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2) compose.yaml 작성
+        2) 준비
       
     </span>
   </a>
@@ -912,10 +945,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
+  <a href="#3-composeyaml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3) 한 번에 띄우기
+        3) compose.yaml 작성 &amp; 한 줄씩 이해하기
       
     </span>
   </a>
@@ -926,7 +959,40 @@
   <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4) 로그 보고, 한 번에 내리기
+        4) 한 번에 띄우기
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) 안을 들여다보기
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6) 한 번에 내리기
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        자주 쓰는 Compose 명령어
       
     </span>
   </a>
@@ -972,15 +1038,19 @@
 </div>
 <h2 id="_1">실습 목표<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Compose가 무엇인지 이해한다</li>
+<li>Compose가 <strong>왜</strong> 필요한지 이해한다</li>
+<li><code>compose.yaml</code> 을 <strong>읽고</strong> 직접 작성한다</li>
 <li><code>docker compose up</code> 한 번으로 여러 컨테이너를 띄우고 내린다</li>
 </ul>
 <hr />
-<h2 id="1">1) 준비<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>~/compose-intro<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/compose-intro
+<h2 id="1-compose-before-after">1) 왜 Compose를 쓰나? (before / after)<a class="headerlink" href="#1-compose-before-after" title="Permanent link">&para;</a></h2>
+<p>nginx 웹서버 + redis 캐시를 띄운다고 해봅시다.</p>
+<p><strong>Before — <code>docker run</code> 으로 하나씩</strong> 😵</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>web<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>nginx:latest
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>cache<span class="w"> </span>redis:latest
 </code></pre></div>
-<h2 id="2-composeyaml">2) compose.yaml 작성<a class="headerlink" href="#2-composeyaml" title="Permanent link">&para;</a></h2>
-<p><code>compose.yaml</code> 파일을 아래 내용으로 만듭니다.</p>
+<p>컨테이너가 3개, 5개로 늘면? 옵션까지 길어져 외우기도, 공유하기도 힘듭니다.</p>
+<p><strong>After — <code>compose.yaml</code> 파일 하나</strong> 😌</p>
 <div class="language-yaml highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">services</span><span class="p">:</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">web</span><span class="p">:</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:latest</span>
@@ -989,32 +1059,132 @@
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">cache</span><span class="p">:</span>
 <a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis:latest</span>
 </code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w">      </span><span class="c1"># 이 한 줄로 둘 다 실행</span>
+</code></pre></div>
+<p>→ <strong>구성을 '명령'이 아니라 '파일'로</strong> 남기니, 누가 실행해도 똑같고 git으로 관리도 됩니다.</p>
+<hr />
+<h2 id="2">2) 준비<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mkdir<span class="w"> </span>~/compose-intro<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/compose-intro
+</code></pre></div>
+<h2 id="3-composeyaml">3) compose.yaml 작성 &amp; 한 줄씩 이해하기<a class="headerlink" href="#3-composeyaml" title="Permanent link">&para;</a></h2>
+<p><code>compose.yaml</code> 파일을 아래 내용으로 만듭니다.</p>
+<div class="language-yaml highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">services</span><span class="p">:</span><span class="w">          </span><span class="c1"># (1) 띄울 컨테이너들의 묶음</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">web</span><span class="p">:</span><span class="w">             </span><span class="c1"># (2) 서비스 이름 (컨테이너 별명이 됨)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:latest</span><span class="w">      </span><span class="c1"># (3) 사용할 이미지</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8080:80&quot;</span><span class="w">            </span><span class="c1"># (4) 호스트 8080 → 컨테이너 80</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">cache</span><span class="p">:</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis:latest</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>번호</th>
+<th>뜻</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(1) <code>services</code></td>
+<td>여기 아래에 띄울 컨테이너들을 나열</td>
+</tr>
+<tr>
+<td>(2) <code>web</code> / <code>cache</code></td>
+<td><strong>서비스 이름</strong> — 컨테이너 이름이자, 서로 부를 때의 주소가 됨</td>
+</tr>
+<tr>
+<td>(3) <code>image</code></td>
+<td><code>docker run</code> 의 이미지와 같음</td>
+</tr>
+<tr>
+<td>(4) <code>ports</code></td>
+<td><code>docker run -p</code> 와 같음 (<code>"호스트:컨테이너"</code>)</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">YAML은 '들여쓰기'가 생명</p>
 <ul>
-<li><code>services</code> : 띄울 컨테이너들 (여기선 <code>web</code>, <code>cache</code>)</li>
-<li><code>web</code> : nginx, 호스트 <code>8080</code> → 컨테이너 <code>80</code></li>
-<li><code>cache</code> : redis (그냥 실행)</li>
+<li><strong><code>Tab</code> 대신 스페이스(공백)</strong> 로 들여쓰세요.</li>
+<li>같은 계층은 <strong>칸 수를 똑같이</strong> 맞춰야 합니다. 어긋나면 <code>up</code> 할 때 에러가 납니다.</li>
 </ul>
-<p>→ <code>docker run</code> 두 번 칠 걸, 파일 하나에 적어둔 것뿐이에요.</p>
-<h2 id="3">3) 한 번에 띄우기<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>ps
+</div>
+<h2 id="4">4) 한 번에 띄우기<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>ps
 </code></pre></div>
-<p>→ <code>web</code> 과 <code>cache</code> <strong>두 컨테이너가 한 번에</strong> Up 됩니다.</p>
+<p>→ <code>web</code> 과 <code>cache</code> <strong>두 컨테이너가 한 번에</strong> Up.</p>
+<div class="admonition tip">
+<p class="admonition-title"><code>-d</code> 는 무슨 뜻? (up vs up -d)</p>
+<ul>
+<li><code>docker compose up</code> : <strong>앞단(foreground)</strong> 실행 → 로그가 화면에 흐르고, <code>Ctrl + C</code> 로 멈춤</li>
+<li><code>docker compose up -d</code> : <strong>백그라운드</strong>로 실행 → 터미널을 계속 쓸 수 있음</li>
+</ul>
+</div>
 <p><strong>확인</strong> — 내 PC 브라우저에서 <code>http://192.168.56.10:8080</code> → nginx 페이지가 뜨면 성공.</p>
-<h2 id="4">4) 로그 보고, 한 번에 내리기<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>logs
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>down
+<h2 id="5">5) 안을 들여다보기<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<p><strong>로그 보기</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w">          </span><span class="c1"># 전체 로그</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>web<span class="w">      </span><span class="c1"># web 서비스만</span>
 </code></pre></div>
-<p><code>down</code> 한 번이면 두 컨테이너가 <strong>한꺼번에</strong> 정리됩니다.</p>
+<p><strong>Compose가 자동으로 만들어 준 '네트워크' 확인</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker<span class="w"> </span>network<span class="w"> </span>ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>compose-intro
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">Compose는 네트워크를 자동으로 만들어 줍니다</p>
+<p><code>up</code> 하면 이 스택 전용 네트워크가 자동 생성되고, <strong>같은 파일 안의 서비스들은 서로 '이름'으로 통신</strong>할 수 있습니다.
+(예: web 안에서 <code>cache</code> 라는 이름으로 redis에 접근 가능) — 이 부분은 <strong>1-11</strong> 에서 직접 확인해요.</p>
+</div>
+<h2 id="6">6) 한 번에 내리기<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>down
+</code></pre></div>
+<p><code>down</code> 한 번이면 컨테이너와 자동 생성된 네트워크까지 <strong>한꺼번에</strong> 정리됩니다.</p>
+<hr />
+<h2 id="compose">자주 쓰는 Compose 명령어<a class="headerlink" href="#compose" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>명령</th>
+<th>하는 일</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>docker compose up -d</code></td>
+<td>스택을 백그라운드로 띄움</td>
+</tr>
+<tr>
+<td><code>docker compose ps</code></td>
+<td>이 스택의 컨테이너 상태</td>
+</tr>
+<tr>
+<td><code>docker compose logs [서비스]</code></td>
+<td>로그 보기</td>
+</tr>
+<tr>
+<td><code>docker compose stop</code> / <code>start</code></td>
+<td>멈춤 / 다시 시작 (삭제 X)</td>
+</tr>
+<tr>
+<td><code>docker compose down</code></td>
+<td>컨테이너·네트워크 정리</td>
+</tr>
+<tr>
+<td><code>docker compose down -v</code></td>
+<td>볼륨까지 함께 삭제</td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="_2">정리<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Compose = 여러 컨테이너 구성을 YAML 하나로 선언 → <code>up</code> / <code>down</code> 한 방.</strong></li>
-<li><code>docker run</code> 을 여러 번 외우는 대신, <strong>구성을 파일로 남긴다.</strong></li>
+<li><code>docker run</code> 을 여러 번 외우는 대신, <strong>구성을 파일로 남긴다</strong> (재현성·공유·버전관리).</li>
+<li><code>up</code> 하면 <strong>전용 네트워크가 자동 생성</strong>되어 서비스끼리 이름으로 통신할 수 있다. (→ 1-11)</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title"><code>docker compose</code> (v2)</p>
-<p>최신 Docker는 띄어쓰기 있는 <code>docker compose</code> 를 씁니다. (예전 <code>docker-compose</code> 아님)</p>
+<p>최신 Docker는 띄어쓰기 있는 <code>docker compose</code> 를 씁니다. 파일 이름은 <code>compose.yaml</code> (또는 <code>docker-compose.yml</code>) 둘 다 인식돼요.</p>
 </div>
 
 
