@@ -846,6 +846,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#6-container_name-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6) 도전과제 대비 — container_name 과 networks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6) 도전과제 대비 — container_name 과 networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-container_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ① container_name — 컨테이너 이름을 '내가' 고정하기
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ② networks — 네트워크를 '직접' 만들어 붙이기
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -976,6 +1015,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#6-container_name-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6) 도전과제 대비 — container_name 과 networks
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6) 도전과제 대비 — container_name 과 networks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-container_name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ① container_name — 컨테이너 이름을 '내가' 고정하기
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-networks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ② networks — 네트워크를 '직접' 만들어 붙이기
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1097,8 +1175,45 @@
 </code></pre></div>
 <p>→ 다시 접속하면 그 테이블이 <strong>그대로</strong> 있습니다. (볼륨 덕분에 유지)</p>
 <hr />
+<h2 id="6-container_name-networks">6) 도전과제 대비 — <code>container_name</code> 과 <code>networks</code><a class="headerlink" href="#6-container_name-networks" title="Permanent link">&para;</a></h2>
+<p>지금까지는 Compose가 컨테이너 이름도, 네트워크도 <strong>알아서</strong> 만들어 줬어요. 하지만 다음 도전과제에서는 이 둘을 <strong>직접 지정</strong>해야 합니다. 어렵지 않아요! 👇</p>
+<h3 id="1-container_name">① <code>container_name</code> — 컨테이너 이름을 '내가' 고정하기<a class="headerlink" href="#1-container_name" title="Permanent link">&para;</a></h3>
+<p>Compose는 보통 컨테이너 이름을 <code>폴더명-서비스명-1</code> 처럼 <strong>자동으로</strong> 짓습니다.
+그런데 <strong>다른 서비스가 특정 이름으로 찾아와야</strong> 할 때는, 이름을 직접 고정합니다.</p>
+<div class="language-yaml highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">services</span><span class="p">:</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">backend</span><span class="p">:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:latest</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">backend-service</span><span class="w">    </span><span class="c1"># ← 이 컨테이너 이름을 &#39;backend-service&#39; 로 고정</span>
+</code></pre></div>
+<p>→ 이제 다른 컨테이너가 <strong><code>backend-service</code> 라는 이름으로</strong> 이 컨테이너를 찾을 수 있어요.</p>
+<h3 id="2-networks">② <code>networks</code> — 네트워크를 '직접' 만들어 붙이기<a class="headerlink" href="#2-networks" title="Permanent link">&para;</a></h3>
+<p>맨 아래에 <code>networks:</code> 로 네트워크를 <strong>선언</strong>하고, 각 서비스에 <code>networks:</code> 로 <strong>연결</strong>합니다.</p>
+<div class="language-yaml highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">services</span><span class="p">:</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nt">backend</span><span class="p">:</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:latest</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mynet</span><span class="w">          </span><span class="c1"># ← backend 를 mynet 에 연결</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nt">frontend</span><span class="p">:</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">httpd:latest</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">    </span><span class="nt">networks</span><span class="p">:</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mynet</span><span class="w">          </span><span class="c1"># ← frontend 도 같은 mynet 에 연결</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="nt">networks</span><span class="p">:</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">  </span><span class="nt">mynet</span><span class="p">:</span><span class="w">               </span><span class="c1"># ← &#39;mynet&#39; 이라는 네트워크를 만든다</span>
+</code></pre></div>
+<p>→ 두 서비스가 <strong>같은 <code>mynet</code></strong> 에 있으니 서로 <strong>이름으로 통신</strong>할 수 있어요.
+(사실 Compose가 자동으로 만들어 주는 네트워크와 결과는 같아요. 여기선 <strong>이름을 내가 정해서</strong> 만든 것뿐이에요.)</p>
+<div class="admonition tip">
+<p class="admonition-title">한눈에 정리</p>
+<ul>
+<li><strong><code>container_name</code></strong> : 컨테이너 이름을 내가 고정 → 다른 서비스가 그 이름으로 찾을 때 사용</li>
+<li><strong><code>networks</code></strong> : 네트워크를 이름 지어 직접 만들고, 서비스들을 거기에 연결</li>
+<li>이 둘 + 앞에서 배운 <strong><code>volumes</code></strong>(영속성) · <strong><code>depends_on</code></strong>(순서) 이면 <strong>다음 도전과제(미니 블로그)</strong> 를 풀 준비 끝! 💪</li>
+</ul>
+</div>
+<hr />
 <h2 id="_3">정리 (삭제)<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>down<span class="w"> </span>-v<span class="w">      </span><span class="c1"># -v 는 볼륨까지 삭제</span>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>down<span class="w"> </span>-v<span class="w">      </span><span class="c1"># -v 는 볼륨까지 삭제</span>
 </code></pre></div>
 <ul>
 <li>서비스는 <strong>이름으로</strong> 통신한다 (adminer → <code>db</code>)</li>
