@@ -12,29 +12,29 @@
         <meta name="author" content="Skilleat">
       
       
-        <link rel="canonical" href="https://skilleat-labs.github.io/docker-cotainer-for-8hours/">
+        <link rel="canonical" href="https://skilleat-labs.github.io/docker-cotainer-for-8hours/day1/06-1-challenge/">
       
       
+        <link rel="prev" href="../06-dockerfile/">
       
-        <link rel="next" href="day1/00-pre-setup/">
       
       
         
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
     
     
       
-        <title>Docker 컨테이너 실습 (8시간)</title>
+        <title>1-6-1. [도전과제] 나만의 앱 이미지 만들기 - Docker 컨테이너 실습 (8시간)</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,9 +53,9 @@
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#docker-8" class="md-skip">
+        <a href="#1-6-1" class="md-skip">
           콘텐츠로 이동
         </a>
       
@@ -96,7 +96,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="상단/헤더">
-    <a href="." title="Docker 컨테이너 실습 (8시간)" class="md-header__button md-logo" aria-label="Docker 컨테이너 실습 (8시간)" data-md-component="logo">
+    <a href="../.." title="Docker 컨테이너 실습 (8시간)" class="md-header__button md-logo" aria-label="Docker 컨테이너 실습 (8시간)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              소개
+              1-6-1. [도전과제] 나만의 앱 이미지 만들기
             
           </span>
         </div>
@@ -234,7 +234,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="네비게이션" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Docker 컨테이너 실습 (8시간)" class="md-nav__button md-logo" aria-label="Docker 컨테이너 실습 (8시간)" data-md-component="logo">
+    <a href="../.." title="Docker 컨테이너 실습 (8시간)" class="md-nav__button md-logo" aria-label="Docker 컨테이너 실습 (8시간)" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -261,6 +261,283 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    소개
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    실습
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    실습
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../00-pre-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1-0. 사전 준비작업 (수업 전 설치)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-vm-virtualbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1-1. VM 직접 체험 (VirtualBox)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-container/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1-2. Docker 기본 명령어와 동작 원리
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-container-practice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1-3. 컨테이너는 프로세스다 & 복습 과제
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-ecr-registry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1-4. 프라이빗 레지스트리 실습 (ECR)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-ecr-push-challenge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1-5. [과제] 내 이미지 ECR에 push
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-dockerfile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1-6. Dockerfile로 나만의 이미지 만들기
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -280,7 +557,7 @@
   <span class="md-ellipsis">
     
   
-    소개
+    1-6-1. [도전과제] 나만의 앱 이미지 만들기
   
 
     
@@ -291,14 +568,14 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <a href="." class="md-nav__link md-nav__link--active">
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
     
   
-    소개
+    1-6-1. [도전과제] 나만의 앱 이미지 만들기
   
 
     
@@ -327,27 +604,76 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        실습 목차
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="실습 목차">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 목차
+        목표
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#1-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) 스타터 코드 가져오기 (VM에서)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) 내 앱으로 커스터마이즈
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) 🎯 [도전] Dockerfile을 직접 작성
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) 🎯 [도전] 직접 빌드하고 실행하기
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ecr-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) (보너스) 내 이미지를 ECR에 push
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ 통과 기준
+      
+    </span>
+  </a>
   
 </li>
       
@@ -355,7 +681,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        준비 사항
+        정리 (다음 실습 전에)
       
     </span>
   </a>
@@ -366,281 +692,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    
-    
-    
-    
-      
-        
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    실습
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    실습
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="day1/00-pre-setup/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1-0. 사전 준비작업 (수업 전 설치)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="day1/01-vm-virtualbox/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1-1. VM 직접 체험 (VirtualBox)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="day1/02-container/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1-2. Docker 기본 명령어와 동작 원리
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="day1/03-container-practice/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1-3. 컨테이너는 프로세스다 & 복습 과제
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="day1/04-ecr-registry/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1-4. 프라이빗 레지스트리 실습 (ECR)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="day1/05-ecr-push-challenge/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1-5. [과제] 내 이미지 ECR에 push
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="day1/06-dockerfile/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1-6. Dockerfile로 나만의 이미지 만들기
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="day1/06-1-challenge/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1-6-1. [도전과제] 나만의 앱 이미지 만들기
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -683,27 +734,76 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        실습 목차
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="실습 목차">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 목차
+        목표
       
     </span>
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#1-vm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) 스타터 코드 가져오기 (VM에서)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) 내 앱으로 커스터마이즈
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) 🎯 [도전] Dockerfile을 직접 작성
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) 🎯 [도전] 직접 빌드하고 실행하기
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ecr-push" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) (보너스) 내 이미지를 ECR에 push
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ 통과 기준
+      
+    </span>
+  </a>
   
 </li>
       
@@ -711,7 +811,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        준비 사항
+        정리 (다음 실습 전에)
       
     </span>
   </a>
@@ -738,29 +838,139 @@
   
 
 
-<h1 id="docker-8">Docker 컨테이너 실습 (8시간)<a class="headerlink" href="#docker-8" title="Permanent link">&para;</a></h1>
-<p>컨테이너의 본질을 <strong>직접 손으로</strong> 익히는 실습 가이드입니다. 가상머신(VM)을 먼저 체험해 "무거움"을 느껴 본 뒤, 같은 일을 Docker로 해보며 컨테이너가 왜 가볍고 빠른지 몸으로 이해하는 흐름으로 구성했습니다.</p>
-<div class="admonition info">
-<p class="admonition-title">이 가이드는 Windows / macOS 사용자를 모두 고려합니다</p>
-<p>설치 단계처럼 OS마다 방법이 갈리는 부분은 <strong>탭으로 Windows / macOS를 나눠</strong> 안내합니다.
-특히 <strong>Apple Silicon(M1·M2·M3) Mac</strong>은 VirtualBox 동작 방식이 달라 별도로 짚어 드립니다.</p>
+<h1 id="1-6-1">1-6-1. [도전과제] 나만의 앱 이미지 만들기<a class="headerlink" href="#1-6-1" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">1-6에서 배운 걸 '스스로' 해봅니다</p>
+<p>제공된 스타터 앱을 가져와 <strong>내 것으로 바꾸고</strong>, <strong>Dockerfile을 직접 작성</strong>해 이미지로 만들어 실행합니다.
+정답 Dockerfile은 맨 아래 접이식에 있으니, <strong>먼저 스스로</strong> 도전해 보세요!</p>
 </div>
-<h2 id="_1">실습 목차<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="_2">실습 목차<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<h2 id="_1">목표<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>1-1. VM 직접 체험 — VirtualBox로 Ubuntu 서버 구축하기</strong></li>
+<li>스타터 코드를 <code>git clone</code> 해서 내 앱으로 커스터마이즈한다</li>
+<li><strong>Dockerfile을 직접 작성</strong>해 이미지를 빌드한다</li>
+<li>실행 후 브라우저에서 내 페이지를 확인한다</li>
+<li>(보너스) 내 이미지를 ECR(<code>skilleat/student</code>)에 이니셜 태그로 push 한다</li>
 </ul>
-<h2 id="_3">준비 사항<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Windows / macOS PC (관리자 권한)</li>
-<li>안정적인 인터넷 연결</li>
-<li>저장 공간 최소 15GB 이상 여유</li>
-</ul>
+<hr />
+<h2 id="1-vm">1) 스타터 코드 가져오기 (VM에서)<a class="headerlink" href="#1-vm" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/skilleat-labs/docker-challenge.git
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>docker-challenge
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>ls
+</code></pre></div>
+<p><code>app.py</code> · <code>requirements.txt</code> · <code>README.md</code> 가 보입니다. <strong>Dockerfile은 없습니다 — 여러분이 직접 만들 거예요.</strong></p>
+<hr />
+<h2 id="2">2) 내 앱으로 커스터마이즈<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p><code>app.py</code> 를 열어 <code>NAME</code> 을 본인 이름으로 바꿉니다.</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>nano<span class="w"> </span>app.py
+</code></pre></div>
+<div class="language-python highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">NAME</span> <span class="o">=</span> <span class="s2">&quot;여기에_본인_이름&quot;</span>     <span class="c1"># ← 본인 이름으로 수정 (예: &quot;홍길동&quot;)</span>
+</code></pre></div>
+<p>저장하고 나오기: <code>Ctrl</code> + <code>O</code> → <code>Enter</code> → <code>Ctrl</code> + <code>X</code></p>
+<hr />
+<h2 id="3-dockerfile">3) 🎯 [도전] Dockerfile을 직접 작성<a class="headerlink" href="#3-dockerfile" title="Permanent link">&para;</a></h2>
+<p><code>docker-challenge</code> 폴더 안에 <code>Dockerfile</code> 을 만들어, 아래 조건을 만족시키세요.</p>
+<table>
+<thead>
+<tr>
+<th>요구사항</th>
+<th>힌트</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>베이스 이미지는 <code>python:3.12-slim</code></td>
+<td><code>FROM</code></td>
+</tr>
+<tr>
+<td>작업 디렉터리를 <code>/app</code> 으로</td>
+<td><code>WORKDIR</code></td>
+</tr>
+<tr>
+<td>의존성을 <strong>먼저</strong> 복사·설치 (캐시가 살도록)</td>
+<td><code>COPY requirements.txt .</code> → <code>RUN pip install -r requirements.txt</code></td>
+</tr>
+<tr>
+<td>나머지 소스 복사</td>
+<td><code>COPY . .</code></td>
+</tr>
+<tr>
+<td>앱이 쓰는 포트는 <strong>5000</strong></td>
+<td><code>EXPOSE</code></td>
+</tr>
+<tr>
+<td>컨테이너 시작 시 <code>python app.py</code> 실행</td>
+<td><code>CMD</code></td>
+</tr>
+</tbody>
+</table>
 <div class="admonition tip">
-<p class="admonition-title">실습 진행 팁</p>
-<p>막히는 부분이 생기면 <strong>어느 단계에서, 어떤 메시지가</strong> 떴는지 그대로 알려주세요.
-OS(Windows / Intel Mac / Apple Silicon Mac)를 함께 말해주시면 훨씬 빠르게 해결됩니다.</p>
+<p class="admonition-title">생각해볼 것</p>
+<p>왜 <code>requirements.txt</code> 를 <strong>먼저</strong> 복사하고 설치할까요? (1-6의 레이어 캐시!)</p>
 </div>
+<hr />
+<h2 id="4">4) 🎯 [도전] 직접 빌드하고 실행하기<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<p>아래 조건에 맞춰 <strong>스스로</strong> 이미지를 빌드하고 컨테이너를 실행하세요. (명령은 직접 작성!)</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>이미지 이름</td>
+<td><code>myapp</code></td>
+</tr>
+<tr>
+<td>태그</td>
+<td><code>1.0</code></td>
+</tr>
+<tr>
+<td>컨테이너 이름</td>
+<td><code>myapp</code></td>
+</tr>
+<tr>
+<td>앱(컨테이너) 포트</td>
+<td><code>5000</code></td>
+</tr>
+<tr>
+<td>호스트 포트</td>
+<td><code>5000</code></td>
+</tr>
+<tr>
+<td>실행 방식</td>
+<td>백그라운드</td>
+</tr>
+</tbody>
+</table>
+<p><strong>확인</strong> — 내 PC 브라우저에서:</p>
+<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>http://192.168.56.10:5000
+</code></pre></div>
+<p>→ <strong>"Hello, 본인이름! 🐳"</strong> 페이지가 뜨면 성공! 🎉</p>
+<hr />
+<h2 id="5-ecr-push">5) (보너스) 내 이미지를 ECR에 push<a class="headerlink" href="#5-ecr-push" title="Permanent link">&para;</a></h2>
+<p>1-4 / 1-5에서 배운 대로, 내 이미지에 <strong>이니셜 태그</strong>를 달아 올려봅니다.</p>
+<p><strong>① 먼저 ECR에 로그인</strong> (로그인 토큰은 12시간이면 만료되니, 안 되면 다시 실행)</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>aws<span class="w"> </span>ecr<span class="w"> </span>get-login-password<span class="w"> </span>--region<span class="w"> </span>ap-northeast-2<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="p">|</span><span class="w"> </span>docker<span class="w"> </span>login<span class="w"> </span>--username<span class="w"> </span>AWS<span class="w"> </span>--password-stdin<span class="w"> </span><span class="m">002029411360</span>.dkr.ecr.ap-northeast-2.amazonaws.com
+</code></pre></div>
+<p><code>Login Succeeded</code> 가 뜨면 됩니다.</p>
+<p><strong>② 태그 달고 push</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>tag<span class="w"> </span>myapp:1.0<span class="w"> </span><span class="m">002029411360</span>.dkr.ecr.ap-northeast-2.amazonaws.com/skilleat/student:이니셜
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>docker<span class="w"> </span>push<span class="w"> </span><span class="m">002029411360</span>.dkr.ecr.ap-northeast-2.amazonaws.com/skilleat/student:이니셜
+</code></pre></div>
+<hr />
+<h2 id="_2">✅ 통과 기준<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 브라우저에 <strong>본인 이름</strong>이 표시된다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>docker ps</code> 에 <code>myapp</code> 컨테이너가 <strong>Up</strong> 상태다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> (보너스) <code>skilleat/student</code> 리포에 <strong>내 이니셜 태그</strong>가 올라갔다</li>
+</ul>
+<hr />
+<h2 id="_3">정리 (다음 실습 전에)<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>myapp
+</code></pre></div>
 
 
 
@@ -818,10 +1028,10 @@ OS(Windows / Intel Mac / Apple Silicon Mac)를 함께 말해주시면 훨씬 빠
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.top", "navigation.tracking", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.top", "navigation.tracking", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
     
     
-      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
     
   </body>
