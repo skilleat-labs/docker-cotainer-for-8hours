@@ -12,13 +12,13 @@
         <meta name="author" content="Skilleat">
       
       
-        <link rel="canonical" href="https://skilleat-labs.github.io/docker-cotainer-for-8hours/day1/00-pre-setup/">
+        <link rel="canonical" href="https://skilleat-labs.github.io/docker-cotainer-for-8hours/day1/07-multistage/">
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../06-dockerfile/">
       
       
-        <link rel="next" href="../01-vm-virtualbox/">
+        <link rel="next" href="../08-volume/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>1-0. 사전 준비작업 (수업 전 설치) - Docker 컨테이너 실습 (8시간)</title>
+        <title>1-7. 멀티스테이지 빌드 - Docker 컨테이너 실습 (8시간)</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-0" class="md-skip">
+        <a href="#1-7" class="md-skip">
           콘텐츠로 이동
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1-0. 사전 준비작업 (수업 전 설치)
+              1-7. 멀티스테이지 빌드
             
           </span>
         </div>
@@ -344,37 +344,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1-0. 사전 준비작업 (수업 전 설치)
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../00-pre-setup/" class="md-nav__link">
         
   
   
@@ -390,98 +363,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="목차">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      목차
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        준비물
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        공식 다운로드 링크
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-virtualbox" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1) VirtualBox 설치
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-ubuntu-server-2404-2604-lts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2) Ubuntu Server 이미지 준비 (24.04 또는 26.04 LTS)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2) Ubuntu Server 이미지 준비 (24.04 또는 26.04 LTS)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        아키텍처별 다운로드 링크 (여기서 바로 받으세요)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        사전 준비 완료 체크리스트
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -659,10 +540,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../07-multistage/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1-7. 멀티스테이지 빌드
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -678,6 +586,114 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실습 목표
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) 개념 — 빌드 단계 / 실행 단계 나누기
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) 준비 — 아주 작은 Go 프로그램
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) 실습 ① — 단일 스테이지 (크다)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) 실습 ② — 멀티스테이지 (작다)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) 크기 비교
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-scratch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6) (도전) 더 줄이기 — scratch
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        정리
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -776,7 +792,73 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        준비물
+        실습 목표
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) 개념 — 빌드 단계 / 실행 단계 나누기
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-go" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) 준비 — 아주 작은 Go 프로그램
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) 실습 ① — 단일 스테이지 (크다)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) 실습 ② — 멀티스테이지 (작다)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) 크기 비교
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-scratch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6) (도전) 더 줄이기 — scratch
       
     </span>
   </a>
@@ -787,57 +869,7 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        공식 다운로드 링크
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-virtualbox" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1) VirtualBox 설치
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-ubuntu-server-2404-2604-lts" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2) Ubuntu Server 이미지 준비 (24.04 또는 26.04 LTS)
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2) Ubuntu Server 이미지 준비 (24.04 또는 26.04 LTS)">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        아키텍처별 다운로드 링크 (여기서 바로 받으세요)
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        사전 준비 완료 체크리스트
+        정리
       
     </span>
   </a>
@@ -864,181 +896,132 @@
   
 
 
-<h1 id="1-0">1-0. 사전 준비작업 (수업 전에 미리 해두세요)<a class="headerlink" href="#1-0" title="Permanent link">&para;</a></h1>
+<h1 id="1-7">1-7. 멀티스테이지 빌드로 이미지 다이어트<a class="headerlink" href="#1-7" title="Permanent link">&para;</a></h1>
 <div class="admonition abstract">
-<p class="admonition-title">이 페이지는 '수업 전 설치' 안내입니다</p>
-<p>수업 시작 전에 <strong>VirtualBox 설치</strong>와 <strong>Ubuntu ISO 다운로드(24.04 또는 26.04 LTS)</strong>까지만 미리 해두시면 됩니다.
-<strong>VM 생성부터는 수업에서 함께</strong> 진행하니, 여기서는 설치·다운로드까지만 하시면 충분합니다.</p>
+<p class="admonition-title">빌드용과 실행용을 나눠 이미지를 확 줄입니다</p>
+<p>프로그램을 '빌드하는 데 필요한 도구'는 무겁습니다. 그런데 <strong>실행할 땐 결과물(실행 파일)만</strong> 있으면 되죠.
+멀티스테이지 빌드는 이 둘을 나눠서, 최종 이미지를 <strong>수십 배</strong> 작게 만듭니다.</p>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">왜 미리 하나요?</p>
-<p>VirtualBox 설치(특히 Windows의 Hyper-V 재부팅)와 Ubuntu ISO 다운로드는 <strong>시간이 꽤 걸립니다.</strong>
-수업 시간을 실습에 쓰기 위해, 다운로드·설치는 미리 끝내두는 걸 권장해요.</p>
-</div>
-<hr />
-<h2 id="_1">준비물<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h2 id="_1">실습 목표<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Windows / macOS / Linux PC</li>
-<li>인터넷 연결 (ISO 다운로드로 수 GB 트래픽 발생)</li>
-<li>관리자 권한</li>
-<li>저장 공간 최소 <strong>15GB 이상</strong> 여유</li>
-</ul>
-<h2 id="_2">공식 다운로드 링크<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<ul>
-<li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox 공식 다운로드</a></li>
-<li>Ubuntu Server ISO → 아래 <strong>2단계에서 아키텍처별(amd64 / arm64) 직접 링크</strong>로 안내합니다</li>
-<li><a href="https://mac.getutm.app/">UTM (Apple Silicon 대체용)</a></li>
-<li><a href="https://docs.docker.com/engine/install/ubuntu/">Docker Engine (Ubuntu) 설치 문서</a> — (참고용, 설치는 수업에서)</li>
+<li>멀티스테이지 빌드가 무엇이고 왜 쓰는지 이해한다</li>
+<li>단일 스테이지 vs 멀티스테이지 <strong>이미지 크기를 직접 비교</strong>한다</li>
 </ul>
 <hr />
-<h2 id="1-virtualbox">1) VirtualBox 설치<a class="headerlink" href="#1-virtualbox" title="Permanent link">&para;</a></h2>
-<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Windows</label><label for="__tabbed_1_2">macOS (Intel)</label><label for="__tabbed_1_3">macOS (Apple Silicon · M1/M2/M3)</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<div class="admonition warning">
-<p class="admonition-title">설치 전 확인 — Hyper-V 끄기</p>
-<p>Windows에서 <strong>Hyper-V가 활성화</strong>되어 있으면 VirtualBox가 정상 실행되지 않을 수 있습니다.
-설치 전 <strong>PowerShell을 관리자 권한</strong>으로 열고 아래를 실행하세요.</p>
-<div class="language-powershell highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">bcdedit</span> <span class="p">/</span><span class="nb">set </span><span class="n">hypervisorlaunchtype</span> <span class="n">off</span>
+<h2 id="1">1) 개념 — 빌드 단계 / 실행 단계 나누기<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<pre class="mermaid"><code>flowchart LR
+  subgraph S1["1단계 · build (무겁다)"]
+    G["golang 이미지&lt;br/&gt;+ 소스 + 컴파일러"]
+  end
+  ART["실행 파일&lt;br/&gt;hello"]
+  subgraph S2["2단계 · runtime (가볍다)"]
+    A["alpine&lt;br/&gt;+ 실행 파일만"]
+  end
+  G --&gt;|"go build"| ART
+  ART --&gt;|"COPY --from=build"| A</code></pre>
+<p>핵심은 <strong>1단계에서 만든 결과물만 2단계로 복사</strong>하고, 무거운 빌드 도구는 버리는 것입니다.</p>
+<hr />
+<h2 id="2-go">2) 준비 — 아주 작은 Go 프로그램<a class="headerlink" href="#2-go" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>~/multi<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/multi
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>cat<span class="w"> </span>&gt;<span class="w"> </span>hello.go<span class="w"> </span><span class="s">&lt;&lt;&#39;EOF&#39;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="s">package main</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="s">import &quot;fmt&quot;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="s">func main() { fmt.Println(&quot;hello multistage&quot;) }</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="s">EOF</span>
 </code></pre></div>
-<p>실행 후 <strong>반드시 재부팅</strong>합니다. (VirtualBox 설치는 재부팅 후 진행)</p>
-</div>
-<ol>
-<li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox 공식 다운로드 페이지</a>에서 <strong>Windows hosts</strong> 버전을 받습니다.</li>
-<li>기본 옵션으로 설치합니다.</li>
-<li>설치 완료 후 VirtualBox를 실행합니다.</li>
-</ol>
-<div class="admonition tip">
-<p class="admonition-title">그래도 안 되면</p>
-<ul>
-<li>재부팅 후에도 실행이 안 되면 BIOS/UEFI에서 <strong>가상화(VT-x/AMD-V)</strong> 가 켜져 있는지 확인하세요.</li>
-<li>WSL2 · Docker Desktop을 쓰고 있었다면 Hyper-V가 다시 켜질 수 있습니다. 위 <code>bcdedit</code> 명령을 다시 적용하세요.</li>
-</ul>
-</div>
-</div>
-<div class="tabbed-block">
-<ol>
-<li><a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox 공식 다운로드 페이지</a>에서 <strong>macOS / Intel hosts</strong> 버전을 받습니다.</li>
-<li><code>.dmg</code>를 열어 설치합니다.</li>
-<li>설치 중 <strong>"시스템 확장 차단됨"</strong> 알림이 뜨면 <code>시스템 설정 → 개인정보 보호 및 보안</code> 에서 <strong>허용</strong>을 누르고, 안내에 따라 재시도합니다.</li>
-</ol>
-</div>
-<div class="tabbed-block">
-<div class="admonition danger">
-<p class="admonition-title">먼저 읽어주세요 — Apple Silicon 주의</p>
-<p>Apple Silicon 맥은 CPU가 <strong>ARM</strong>이라, x86용 VirtualBox VM이 <strong>잘 안 되거나 매우 느릴 수</strong> 있습니다.
-(VirtualBox 7.1+에 Apple Silicon 지원이 들어왔지만 아직 <strong>실험적</strong>입니다.)</p>
-</div>
-<p><strong>먼저 시도:</strong> <a href="https://www.virtualbox.org/wiki/Downloads">VirtualBox 다운로드</a>에서 <strong>macOS / Arm64</strong> 빌드를 받아 설치해 봅니다.</p>
-<p><strong>잘 안 되면 (권장 대체 경로): UTM 사용</strong></p>
-<ol>
-<li><a href="https://mac.getutm.app/">UTM</a>을 설치합니다. (App Store 또는 공식 사이트)</li>
-<li>Ubuntu는 <strong>ARM64용 ISO</strong>(<code>...-live-server-arm64.iso</code>)를 받습니다. (아래 2단계 참고)</li>
-</ol>
-<div class="admonition success">
-<p class="admonition-title">안심하세요</p>
-<p>하이퍼바이저(VirtualBox / UTM)만 다를 뿐, 수업에서 하는 작업은 <strong>완전히 동일</strong>합니다.
-본인이 Apple Silicon이라 UTM으로 준비했다면, 수업 시작 때 미리 알려주세요.</p>
-</div>
-</div>
-</div>
-</div>
-<hr />
-<h2 id="2-ubuntu-server-2404-2604-lts">2) Ubuntu Server 이미지 준비 (24.04 또는 26.04 LTS)<a class="headerlink" href="#2-ubuntu-server-2404-2604-lts" title="Permanent link">&para;</a></h2>
-<div class="admonition info">
-<p class="admonition-title">버전은 24.04 / 26.04 아무거나 OK — 최신 26.04 받아도 됩니다</p>
-<p>이 실습은 <strong>24.04 LTS</strong> 와 <strong>26.04 LTS(최신)</strong> 에서 동일하게 동작합니다.
-기본으로 나오는 <strong>최신 26.04 LTS(Resolute Raccoon)를 그대로 받으셔도 됩니다.</strong>
-(Docker 저장소도 26.04를 지원해서 이후 설치 명령이 수정 없이 그대로 동작합니다.)</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">가장 중요 — 내 CPU에 맞는 아키텍처(amd64 / arm64)를 받으세요</p>
-<p>ISO는 <strong>CPU 종류에 맞는 것</strong>을 받아야 부팅됩니다. 안 맞으면 설치가 아예 안 돼요. (특히 Mac 주의)</p>
-<ul>
-<li><strong>Windows · Intel Mac → <code>amd64</code></strong></li>
-<li><strong>Apple Silicon Mac (M1·M2·M3·M4) → <code>arm64</code></strong></li>
-</ul>
-<p><strong>내 맥 확인:</strong> 왼쪽 위 사과 로고 → <em>이 Mac에 관하여</em> → <strong>"Apple M..."</strong> 이면 arm64, <strong>"Intel..."</strong> 이면 amd64</p>
-</div>
-<h3 id="_3">아키텍처별 다운로드 링크 (여기서 바로 받으세요)<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Windows · Intel Mac (amd64)</label><label for="__tabbed_2_2">Apple Silicon Mac (arm64)</label></div>
-<div class="tabbed-content">
-<div class="tabbed-block">
-<table>
-<thead>
-<tr>
-<th>버전</th>
-<th>다운로드 페이지</th>
-<th>받을 파일</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>26.04 LTS</strong> (권장·최신)</td>
-<td><a href="https://releases.ubuntu.com/26.04/">releases.ubuntu.com/26.04</a></td>
-<td><code>ubuntu-26.04-live-server-amd64.iso</code></td>
-</tr>
-<tr>
-<td>24.04 LTS</td>
-<td><a href="https://releases.ubuntu.com/24.04/">releases.ubuntu.com/24.04</a></td>
-<td><code>ubuntu-24.04.x-live-server-amd64.iso</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="tabbed-block">
-<div class="admonition danger">
-<p class="admonition-title">Apple Silicon은 VirtualBox 대신 UTM 권장</p>
-<p>arm64 + VirtualBox는 아직 실험적이라 불안정할 수 있어요. <strong>UTM</strong>으로 진행하세요.
-(VM 안에서 하는 작업·명령은 완전히 동일합니다.)</p>
-</div>
-<table>
-<thead>
-<tr>
-<th>버전</th>
-<th>다운로드 페이지</th>
-<th>받을 파일</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>26.04 LTS</strong> (권장·최신)</td>
-<td><a href="https://cdimage.ubuntu.com/releases/26.04/release/">cdimage.ubuntu.com/releases/26.04</a></td>
-<td><code>ubuntu-26.04-live-server-arm64.iso</code></td>
-</tr>
-<tr>
-<td>24.04 LTS</td>
-<td><a href="https://cdimage.ubuntu.com/releases/24.04/release/">cdimage.ubuntu.com/releases/24.04</a></td>
-<td><code>ubuntu-24.04.x-live-server-arm64.iso</code></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
 <div class="admonition note">
-<p class="admonition-title">ISO 파일은 어디에 두나요?</p>
-<p>다운로드 폴더에 그대로 두셔도 됩니다. 수업에서 VM 만들 때 이 파일을 선택하니 <strong>삭제하지 말고 위치만 기억</strong>해 두세요.</p>
+<p class="admonition-title">Note</p>
+<p>Go 문법을 몰라도 됩니다. <strong>"한 줄 출력하는 프로그램"</strong> 이에요. (멀티스테이지 효과를 보기 좋은 예시라 Go를 씁니다.)</p>
 </div>
 <hr />
-<h2 id="_4">사전 준비 완료 체크리스트<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>수업 시작 전 아래가 모두 되어 있으면 완벽합니다.</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> VirtualBox(또는 Apple Silicon은 UTM) 설치 완료 — 실행하면 창이 뜬다</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Ubuntu Server ISO 다운로드 완료 — <strong>24.04 또는 26.04</strong>, 그리고 <strong>내 CPU에 맞는 <code>amd64</code>/<code>arm64</code></strong></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> (Windows) Hyper-V 끄고 재부팅까지 완료</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 저장 공간 15GB 이상 여유 확인</li>
+<h2 id="3-1">3) 실습 ① — 단일 스테이지 (크다)<a class="headerlink" href="#3-1" title="Permanent link">&para;</a></h2>
+<p><code>Dockerfile</code> 을 아래 내용으로 작성합니다.</p>
+<div class="language-dockerfile highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">golang:1.23</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">COPY</span><span class="w"> </span>hello.go<span class="w"> </span>.
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">RUN</span><span class="w"> </span><span class="nv">CGO_ENABLED</span><span class="o">=</span><span class="m">0</span><span class="w"> </span>go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span>hello<span class="w"> </span>hello.go
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;./hello&quot;</span><span class="p">]</span>
+</code></pre></div>
+<p>빌드하고 크기를 봅니다.</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>hello:single<span class="w"> </span>.
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>hello:single<span class="w">       </span><span class="c1"># → hello multistage</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>docker<span class="w"> </span>images<span class="w"> </span>hello:single<span class="w">         </span><span class="c1"># SIZE 확인 (수백 MB)</span>
+</code></pre></div>
+<p>→ golang 이미지·컴파일러·소스가 <strong>최종 이미지에 통째로 남아</strong> 큽니다.</p>
+<hr />
+<h2 id="4-2">4) 실습 ② — 멀티스테이지 (작다)<a class="headerlink" href="#4-2" title="Permanent link">&para;</a></h2>
+<p><code>Dockerfile</code> 을 아래로 바꿉니다.</p>
+<div class="language-dockerfile highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c"># 1단계: 빌드 (무거운 golang 이미지에서 컴파일)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">FROM</span><span class="w"> </span><span class="s">golang:1.23</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">build</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="k">COPY</span><span class="w"> </span>hello.go<span class="w"> </span>.
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">RUN</span><span class="w"> </span><span class="nv">CGO_ENABLED</span><span class="o">=</span><span class="m">0</span><span class="w"> </span>go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span>hello<span class="w"> </span>hello.go
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c"># 2단계: 실행 (가벼운 alpine에 &#39;결과물만&#39; 복사)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="k">FROM</span><span class="w"> </span><span class="s">alpine:latest</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>build<span class="w"> </span>/app/hello<span class="w"> </span>.
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;./hello&quot;</span><span class="p">]</span>
+</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>hello:multi<span class="w"> </span>.
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>hello:multi<span class="w">        </span><span class="c1"># → hello multistage (똑같이 동작!)</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>docker<span class="w"> </span>images<span class="w"> </span>hello:multi<span class="w">          </span><span class="c1"># SIZE 확인 (수십 MB)</span>
+</code></pre></div>
+<div class="admonition info">
+<p class="admonition-title">핵심 — <code>COPY --from</code></p>
+<p><code>COPY --from=build /app/hello .</code> 이 한 줄이 마법입니다.
+1단계(<code>build</code>)에서 만든 <strong>결과물만</strong> 2단계로 가져오고, 무거운 빌드 도구는 버립니다.</p>
+</div>
+<hr />
+<h2 id="5">5) 크기 비교<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>images<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>hello
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>이미지</th>
+<th>방식</th>
+<th>크기(대략)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hello:single</code></td>
+<td>단일 스테이지</td>
+<td><strong>수백 MB</strong> (golang 통째로 포함)</td>
+</tr>
+<tr>
+<td><code>hello:multi</code></td>
+<td>멀티스테이지</td>
+<td><strong>10MB대</strong> (alpine + 실행 파일만)</td>
+</tr>
+</tbody>
+</table>
+<p>→ <strong>동작은 똑같은데</strong> 크기가 확 줄었죠? (정확한 값은 <code>docker images</code> 의 SIZE 열로 확인하세요.)</p>
+<hr />
+<h2 id="6-scratch">6) (도전) 더 줄이기 — <code>scratch</code><a class="headerlink" href="#6-scratch" title="Permanent link">&para;</a></h2>
+<p>아무것도 없는 빈 베이스 <code>scratch</code> 를 쓰면 더 작아집니다. (순수 실행 파일만)</p>
+<div class="language-dockerfile highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">golang:1.23</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="s">build</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">COPY</span><span class="w"> </span>hello.go<span class="w"> </span>.
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="k">RUN</span><span class="w"> </span><span class="nv">CGO_ENABLED</span><span class="o">=</span><span class="m">0</span><span class="w"> </span>go<span class="w"> </span>build<span class="w"> </span>-o<span class="w"> </span>hello<span class="w"> </span>hello.go
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="k">FROM</span><span class="w"> </span><span class="s">scratch</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="k">COPY</span><span class="w"> </span>--from<span class="o">=</span>build<span class="w"> </span>/app/hello<span class="w"> </span>/hello
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/hello&quot;</span><span class="p">]</span>
+</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>hello:scratch<span class="w"> </span>.
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>hello:scratch
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>docker<span class="w"> </span>images<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>hello
+</code></pre></div>
+<p>→ 몇 MB 수준까지 작아집니다. 단, <code>scratch</code> 는 <strong>셸이 없어</strong> <code>docker exec</code> 로 못 들어갑니다.</p>
+<hr />
+<h2 id="_2">정리<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>멀티스테이지 = <strong>빌드 단계 / 실행 단계 분리</strong> → 최종 이미지엔 결과물만.</li>
+<li><code>FROM ... AS build</code> 로 단계에 이름을 붙이고, <code>COPY --from=build</code> 로 결과물만 복사.</li>
+<li>이미지가 작을수록 <strong>push/pull 이 빠르고, 공격 표면도 작아</strong> 보안에도 유리합니다.</li>
 </ul>
-<div class="admonition question">
-<p class="admonition-title">잘 안 되는 게 있으면</p>
-<p>수업 때 해결해 드리니 <strong>너무 붙잡고 있지 마세요.</strong> 어느 단계에서 어떤 메시지가 떴는지,
-그리고 본인 환경(<strong>Windows / Intel Mac / Apple Silicon Mac</strong>)을 함께 알려주시면 빠르게 도와드립니다.</p>
-</div>
-<hr />
-<div class="admonition success">
-<p class="admonition-title">여기까지 하셨으면 준비 끝!</p>
-<p>다음 <strong><a href="../01-vm-virtualbox/">1-1. VM 직접 체험</a></strong> 은 수업에서 VM 생성부터 함께 진행합니다.</p>
-</div>
 
 
 
