@@ -59,13 +59,18 @@ NAME = "여기에_본인_이름"     # ← 본인 이름으로 수정 (예: "홍
 
 ---
 
-## 4) 빌드하고 실행하기
+## 4) 🎯 [도전] 직접 빌드하고 실행하기
 
-```bash
-docker build -t myapp:1.0 .
-docker run -d -p 5000:5000 --name myapp myapp:1.0
-docker ps
-```
+아래 조건에 맞춰 **스스로** 이미지를 빌드하고 컨테이너를 실행하세요. (명령은 직접 작성!)
+
+| 항목 | 값 |
+|---|---|
+| 이미지 이름 | `myapp` |
+| 태그 | `1.0` |
+| 컨테이너 이름 | `myapp` |
+| 앱(컨테이너) 포트 | `5000` |
+| 호스트 포트 | `5000` |
+| 실행 방식 | 백그라운드 |
 
 **확인** — 내 PC 브라우저에서:
 
@@ -98,7 +103,8 @@ docker push 002029411360.dkr.ecr.ap-northeast-2.amazonaws.com/skilleat/student:�
 
 ---
 
-??? success "막히면 열어보기 — Dockerfile 정답"
+??? success "막히면 열어보기 — 정답 (Dockerfile + 빌드·실행)"
+    **Dockerfile**
     ```dockerfile
     FROM python:3.12-slim
     WORKDIR /app
@@ -107,6 +113,12 @@ docker push 002029411360.dkr.ecr.ap-northeast-2.amazonaws.com/skilleat/student:�
     COPY . .
     EXPOSE 5000
     CMD ["python", "app.py"]
+    ```
+
+    **빌드 & 실행**
+    ```bash
+    docker build -t myapp:1.0 .
+    docker run -d -p 5000:5000 --name myapp myapp:1.0
     ```
 
     `requirements.txt` 를 먼저 복사·설치하면, 소스(`app.py`)만 바뀔 때 `pip install` 레이어가 **캐시로 재사용**되어 빌드가 빨라집니다.
