@@ -12,13 +12,11 @@
         <meta name="author" content="Skilleat">
       
       
-        <link rel="canonical" href="https://skilleat-labs.github.io/docker-cotainer-for-8hours/day1/02-container/">
+        <link rel="canonical" href="https://skilleat-labs.github.io/docker-cotainer-for-8hours/day1/06-dockerfile/">
       
       
-        <link rel="prev" href="../01-vm-virtualbox/">
+        <link rel="prev" href="../05-ecr-push-challenge/">
       
-      
-        <link rel="next" href="../03-container-practice/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>1-2. Docker 기본 명령어와 동작 원리 - Docker 컨테이너 실습 (8시간)</title>
+        <title>1-6. Dockerfile로 나만의 이미지 만들기 - Docker 컨테이너 실습 (8시간)</title>
       
     
     
@@ -82,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-2-docker" class="md-skip">
+        <a href="#1-6-dockerfile" class="md-skip">
           콘텐츠로 이동
         </a>
       
@@ -118,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1-2. Docker 기본 명령어와 동작 원리
+              1-6. Dockerfile로 나만의 이미지 만들기
             
           </span>
         </div>
@@ -400,37 +398,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1-2. Docker 기본 명령어와 동작 원리
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../02-container/" class="md-nav__link">
         
   
   
@@ -446,248 +417,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="목차">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      목차
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 목표
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-docker" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1) Docker 명령어 문법 구조
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-ubuntu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2) ubuntu 컨테이너 — 격리된 프로세스 체감
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2) ubuntu 컨테이너 — 격리된 프로세스 체감">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        컨테이너 실행
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        격리 확인
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        컨테이너 삭제 후 재실행
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-nginx" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3) nginx 컨테이너 — 실시간 로그 관찰
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3) nginx 컨테이너 — 실시간 로그 관찰">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        컨테이너 실행
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실시간 로그 보기
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-redis-db" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4) redis 컨테이너 — DB 타입 컨테이너
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4) redis 컨테이너 — DB 타입 컨테이너">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        컨테이너 실행
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#redis-cli" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        redis-cli로 데이터 저장/조회
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#redis" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        redis 컨테이너 삭제 후 데이터 확인
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-stop-start-restart-rm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5) 컨테이너 생명주기 — stop / start / restart / rm
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6) 도전 과제: 버전 교체 체험
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6) 도전 과제: 버전 교체 체험">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        과제 1. 버전 교체
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        과제 2. 세 버전 동시 실행
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        정리
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -781,10 +510,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../06-dockerfile/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1-6. Dockerfile로 나만의 이미지 만들기
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -800,6 +556,187 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실습 목표
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-dockerfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) Dockerfile 핵심 명령어
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1) Dockerfile 핵심 명령어">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        첫 이미지 — 제일 간단하게
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        조금 더 실제처럼 — 웹 페이지 담기
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-cmd-vs-entrypoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) CMD vs ENTRYPOINT — 실습으로 이해하기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2) CMD vs ENTRYPOINT — 실습으로 이해하기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-cmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실험 A — CMD 만
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-entrypoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실험 B — ENTRYPOINT 만
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-entrypoint-cmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실험 C — ENTRYPOINT + CMD (실무 조합)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        정리
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) 레이어 캐시 — 왜 순서가 중요한가
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3) 레이어 캐시 — 왜 순서가 중요한가">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        나쁜 순서 — 소스를 먼저 COPY
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        좋은 순서 — 의존성 먼저, 소스 나중
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        정리
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -850,33 +787,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-docker" class="md-nav__link">
+  <a href="#1-dockerfile" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1) Docker 명령어 문법 구조
+        1) Dockerfile 핵심 명령어
       
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-ubuntu" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2) ubuntu 컨테이너 — 격리된 프로세스 체감
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2) ubuntu 컨테이너 — 격리된 프로세스 체감">
+    <nav class="md-nav" aria-label="1) Dockerfile 핵심 명령어">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        컨테이너 실행
+        첫 이미지 — 제일 간단하게
       
     </span>
   </a>
@@ -887,7 +813,57 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        격리 확인
+        조금 더 실제처럼 — 웹 페이지 담기
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-cmd-vs-entrypoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) CMD vs ENTRYPOINT — 실습으로 이해하기
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2) CMD vs ENTRYPOINT — 실습으로 이해하기">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-cmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실험 A — CMD 만
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-entrypoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실험 B — ENTRYPOINT 만
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-entrypoint-cmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실험 C — ENTRYPOINT + CMD (실무 조합)
       
     </span>
   </a>
@@ -898,7 +874,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        컨테이너 삭제 후 재실행
+        정리
       
     </span>
   </a>
@@ -911,146 +887,46 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-nginx" class="md-nav__link">
+  <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3) nginx 컨테이너 — 실시간 로그 관찰
+        3) 레이어 캐시 — 왜 순서가 중요한가
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="3) nginx 컨테이너 — 실시간 로그 관찰">
+    <nav class="md-nav" aria-label="3) 레이어 캐시 — 왜 순서가 중요한가">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#copy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        나쁜 순서 — 소스를 먼저 COPY
+      
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        컨테이너 실행
+        좋은 순서 — 의존성 먼저, 소스 나중
       
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실시간 로그 보기
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-redis-db" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4) redis 컨테이너 — DB 타입 컨테이너
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="4) redis 컨테이너 — DB 타입 컨테이너">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        컨테이너 실행
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#redis-cli" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        redis-cli로 데이터 저장/조회
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#redis" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        redis 컨테이너 삭제 후 데이터 확인
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-stop-start-restart-rm" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5) 컨테이너 생명주기 — stop / start / restart / rm
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6) 도전 과제: 버전 교체 체험
-      
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="6) 도전 과제: 버전 교체 체험">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        과제 1. 버전 교체
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        과제 2. 세 버전 동시 실행
-      
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         정리
@@ -1080,302 +956,206 @@
   
 
 
-<h1 id="1-2-docker">1-2. Docker 기본 명령어와 동작 원리<a class="headerlink" href="#1-2-docker" title="Permanent link">&para;</a></h1>
+<h1 id="1-6-dockerfile">1-6. Dockerfile로 나만의 이미지 만들기<a class="headerlink" href="#1-6-dockerfile" title="Permanent link">&para;</a></h1>
+<div class="admonition abstract">
+<p class="admonition-title">이번엔 이미지를 '내가' 만듭니다</p>
+<p>지금까지는 남이 만든 이미지를 pull 했지만, 이번엔 <strong>Dockerfile</strong>로 직접 이미지를 빌드합니다.
+<strong>핵심 명령어 → CMD vs ENTRYPOINT → 레이어 캐시</strong> 순으로, 쉬운 것부터 차근차근 가봅시다.</p>
+</div>
 <h2 id="_1">실습 목표<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Docker 명령어 문법 구조 이해</li>
-<li>ubuntu 컨테이너로 격리된 프로세스 직접 체감</li>
-<li>nginx 컨테이너 로그를 실시간으로 관찰</li>
-<li>redis 컨테이너로 "웹서버만이 아니다"를 경험</li>
-<li>stop, start, restart, rm 으로 컨테이너 생명주기 이해</li>
+<li>Dockerfile 핵심 명령어로 <strong>내 이미지를 직접 빌드</strong>한다</li>
+<li><strong>CMD 와 ENTRYPOINT 의 차이</strong>를 실습으로 이해한다</li>
+<li><strong>레이어 캐시</strong>가 왜 중요한지 빌드 속도로 체감한다</li>
 </ul>
-<hr />
-<h2 id="1-docker">1) Docker 명령어 문법 구조<a class="headerlink" href="#1-docker" title="Permanent link">&para;</a></h2>
-<p>기본 형태:</p>
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker &lt;명령&gt; [옵션] [대상]
+<p>준비:</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>~/myimage<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/myimage
 </code></pre></div>
+<hr />
+<h2 id="1-dockerfile">1) Dockerfile 핵심 명령어<a class="headerlink" href="#1-dockerfile" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>요소</th>
-<th>예시</th>
-<th>의미</th>
+<th>명령어</th>
+<th>하는 일</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>명령</td>
-<td><code>run</code>, <code>ps</code>, <code>exec</code>, <code>logs</code>, <code>stop</code>, <code>rm</code></td>
-<td>수행할 동작</td>
+<td><code>FROM</code></td>
+<td>베이스 이미지 지정 (항상 첫 줄)</td>
 </tr>
 <tr>
-<td>옵션</td>
-<td><code>-d</code>, <code>--name</code>, <code>-p</code>, <code>-it</code></td>
-<td>동작 방식 설정</td>
+<td><code>WORKDIR</code></td>
+<td>작업 디렉터리 설정</td>
 </tr>
 <tr>
-<td>대상</td>
-<td><code>nginx</code>, <code>ubuntu</code>, <code>web1</code></td>
-<td>이미지 또는 컨테이너 이름</td>
+<td><code>COPY</code></td>
+<td>호스트 파일 → 이미지 안으로 복사</td>
+</tr>
+<tr>
+<td><code>RUN</code></td>
+<td><strong>빌드 시점</strong>에 명령 실행 (패키지 설치 등)</td>
+</tr>
+<tr>
+<td><code>ENV</code></td>
+<td>환경변수 설정</td>
+</tr>
+<tr>
+<td><code>EXPOSE</code></td>
+<td>사용하는 포트 문서화</td>
+</tr>
+<tr>
+<td><code>CMD</code> / <code>ENTRYPOINT</code></td>
+<td>컨테이너가 <strong>시작될 때</strong> 실행할 명령</td>
 </tr>
 </tbody>
 </table>
-<p><strong>자주 쓰는 옵션:</strong></p>
-<table>
-<thead>
-<tr>
-<th>옵션</th>
-<th>의미</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>-d</code></td>
-<td>백그라운드 실행 (detached)</td>
-</tr>
-<tr>
-<td><code>--name</code></td>
-<td>컨테이너 이름 지정</td>
-</tr>
-<tr>
-<td><code>-p 호스트포트:컨테이너포트</code></td>
-<td>포트 연결</td>
-</tr>
-<tr>
-<td><code>-it</code></td>
-<td>터미널 입출력 연결 (interactive + tty)</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition info">
-<p class="admonition-title">-p 옵션 이해하기</p>
-<p><code>-p 8082:80</code> 이라고 쓰면, 컨테이너 포트(오른쪽: 80)는 컨테이너 안에서 앱이 실제로 열고 있는 포트이고, 호스트 포트(왼쪽: 8082)는 내 PC(또는 VM)에서 접근할 포트입니다.</p>
-</div>
-<hr />
-<h2 id="2-ubuntu">2) ubuntu 컨테이너 — 격리된 프로세스 체감<a class="headerlink" href="#2-ubuntu" title="Permanent link">&para;</a></h2>
-<h3 id="_2">컨테이너 실행<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>shell-test<span class="w"> </span>ubuntu:24.04<span class="w"> </span>bash
-</code></pre></div>
-<p>접속하면 프롬프트가 컨테이너 ID로 바뀝니다:</p>
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>root@a1b2c3d4e5f6:/#
-</code></pre></div>
-<h3 id="_3">격리 확인<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>컨테이너 안에서:</p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># 호스트명 확인 — 컨테이너 ID가 출력됨</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>hostname
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="c1"># 프로세스 목록 — bash 하나뿐, VM의 프로세스는 안 보임</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>ps<span class="w"> </span>aux
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="c1"># 파일 시스템 — VM과 완전히 분리된 독립 환경</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>ls<span class="w"> </span>/
-<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>
-<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="c1"># 패키지 설치 (VM에는 영향 없음)</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>curl
-<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>curl<span class="w"> </span>--version
-</code></pre></div>
 <div class="admonition tip">
-<p class="admonition-title">핵심 포인트</p>
-<p>VM에 curl이 없어도 이 컨테이너 안에는 설치됩니다. 컨테이너를 삭제하면 설치한 모든 것이 사라집니다.</p>
+<p class="admonition-title">가장 헷갈리는 시점</p>
+<p><code>RUN</code> 은 <strong>이미지를 만들 때(build)</strong>, <code>CMD</code>/<code>ENTRYPOINT</code> 는 <strong>컨테이너를 실행할 때(run)</strong> 동작합니다.</p>
 </div>
-<h3 id="_4">컨테이너 삭제 후 재실행<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>rm<span class="w"> </span>shell-test
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--name<span class="w"> </span>shell-test<span class="w"> </span>ubuntu:24.04<span class="w"> </span>bash
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>curl<span class="w"> </span>--version
+<h3 id="_2">첫 이미지 — 제일 간단하게<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p><code>Dockerfile</code> 을 아래 내용으로 작성합니다.</p>
+<div class="language-dockerfile highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">alpine:latest</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;echo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Hello from my first image!&quot;</span><span class="p">]</span>
 </code></pre></div>
-<p>결과: <code>curl: command not found</code> — 이미지는 변하지 않았으므로 설치한 내용은 사라졌습니다.</p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">exit</span>
+<p>빌드하고 실행:</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>myfirst:1.0<span class="w"> </span>.
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>myfirst:1.0
 </code></pre></div>
+<p>→ <code>Hello from my first image!</code> 가 출력되면 성공. <strong>내가 만든 첫 이미지</strong>입니다. 🎉</p>
+<h3 id="_3">조금 더 실제처럼 — 웹 페이지 담기<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>파일을 준비합니다.</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mkdir<span class="w"> </span>site
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;&lt;h1&gt;Hello Docker&lt;/h1&gt;&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>site/index.html
+</code></pre></div>
+<p><code>Dockerfile</code> 을 아래로 바꿉니다.</p>
+<div class="language-dockerfile highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">python:3.12-slim</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">COPY</span><span class="w"> </span>site/<span class="w"> </span>./site/
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">EXPOSE</span><span class="w"> </span><span class="s">8000</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-m&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;http.server&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;8000&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;--directory&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;site&quot;</span><span class="p">]</span>
+</code></pre></div>
+<p>빌드 &amp; 실행:</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>myweb:1.0<span class="w"> </span>.
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>myweb<span class="w"> </span>-p<span class="w"> </span><span class="m">8000</span>:8000<span class="w"> </span>myweb:1.0
+</code></pre></div>
+<p>확인 — 내 PC 브라우저에서 <code>http://192.168.56.10:8000</code> → "Hello Docker" 페이지가 뜨면 성공.</p>
+<div class="admonition success">
+<p class="admonition-title">방금 이런 걸 써봤어요</p>
+<p><code>FROM</code>(베이스) · <code>WORKDIR</code>(작업 폴더) · <code>COPY</code>(파일 넣기) · <code>EXPOSE</code>(포트) · <code>CMD</code>(실행) 를 한 번에 사용했습니다.</p>
+</div>
 <hr />
-<h2 id="3-nginx">3) nginx 컨테이너 — 실시간 로그 관찰<a class="headerlink" href="#3-nginx" title="Permanent link">&para;</a></h2>
-<h3 id="_5">컨테이너 실행<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>web1<span class="w"> </span>-p<span class="w"> </span><span class="m">8082</span>:80<span class="w"> </span>nginx:latest
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>docker<span class="w"> </span>ps
+<h2 id="2-cmd-vs-entrypoint">2) CMD vs ENTRYPOINT — 실습으로 이해하기<a class="headerlink" href="#2-cmd-vs-entrypoint" title="Permanent link">&para;</a></h2>
+<p>둘 다 "컨테이너가 시작될 때 실행할 명령"인데, <strong><code>docker run</code> 뒤에 인자를 줬을 때</strong> 동작이 다릅니다. 직접 3번 만들어 비교해봅시다.</p>
+<h3 id="a-cmd">실험 A — CMD 만<a class="headerlink" href="#a-cmd" title="Permanent link">&para;</a></h3>
+<div class="language-dockerfile highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">alpine:latest</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;echo&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;hello&quot;</span><span class="p">]</span>
 </code></pre></div>
-<h3 id="_6">실시간 로그 보기<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p><strong>터미널 1</strong> — 로그 실시간 추적:</p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>web1
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>demo:cmd<span class="w"> </span>.
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>demo:cmd<span class="w">            </span><span class="c1"># → hello</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>demo:cmd<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>bye<span class="w">   </span><span class="c1"># → bye   (CMD가 통째로 교체됨)</span>
 </code></pre></div>
-<p><strong>브라우저</strong> — 요청 보내기:</p>
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>http://192.168.56.10:8082
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>http://192.168.56.10:8082/없는페이지
+<h3 id="b-entrypoint">실험 B — ENTRYPOINT 만<a class="headerlink" href="#b-entrypoint" title="Permanent link">&para;</a></h3>
+<div class="language-dockerfile highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">alpine:latest</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;echo&quot;</span><span class="p">]</span>
 </code></pre></div>
-<p><strong>로그 해석:</strong></p>
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>192.168.56.1 - - [27/Apr/2026] &quot;GET / HTTP/1.1&quot; 200 615
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>192.168.56.1 - - [27/Apr/2026] &quot;GET /없는페이지 HTTP/1.1&quot; 404 153
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>demo:ep<span class="w"> </span>.
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>demo:ep<span class="w">             </span><span class="c1"># → (빈 줄)</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>demo:ep<span class="w"> </span>bye<span class="w">         </span><span class="c1"># → bye   (bye가 echo 뒤에 &#39;추가&#39;됨)</span>
 </code></pre></div>
-<ul>
-<li><code>200</code> → 정상 응답</li>
-<li><code>404</code> → 없는 페이지 요청</li>
-</ul>
-<p>로그 추적 종료: <code>Ctrl + C</code></p>
-<hr />
-<h2 id="4-redis-db">4) redis 컨테이너 — DB 타입 컨테이너<a class="headerlink" href="#4-redis-db" title="Permanent link">&para;</a></h2>
-<h3 id="_7">컨테이너 실행<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>myredis<span class="w"> </span>redis:alpine
-<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>docker<span class="w"> </span>ps
+<h3 id="c-entrypoint-cmd">실험 C — ENTRYPOINT + CMD (실무 조합)<a class="headerlink" href="#c-entrypoint-cmd" title="Permanent link">&para;</a></h3>
+<div class="language-dockerfile highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">alpine:latest</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">ENTRYPOINT</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;echo&quot;</span><span class="p">]</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">]</span>
 </code></pre></div>
-<h3 id="redis-cli">redis-cli로 데이터 저장/조회<a class="headerlink" href="#redis-cli" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>myredis<span class="w"> </span>redis-cli
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>demo:combo<span class="w"> </span>.
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>demo:combo<span class="w">          </span><span class="c1"># → hello   (CMD가 &#39;기본 인자&#39;)</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>demo:combo<span class="w"> </span>bye<span class="w">      </span><span class="c1"># → bye     (인자를 주면 CMD 자리만 교체)</span>
 </code></pre></div>
-<p>redis 프롬프트가 열립니다:</p>
-<div class="language-text highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>127.0.0.1:6379&gt;
-</code></pre></div>
-<p>데이터 작업:</p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>SET<span class="w"> </span>name<span class="w"> </span><span class="s2">&quot;docker-lab&quot;</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>GET<span class="w"> </span>name
-<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>SET<span class="w"> </span>count<span class="w"> </span><span class="m">1</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>INCR<span class="w"> </span>count
-<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>GET<span class="w"> </span>count
-<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>EXIT
-</code></pre></div>
+<h3 id="_4">정리<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <table>
 <thead>
 <tr>
-<th>명령어</th>
-<th>의미</th>
+<th>Dockerfile</th>
+<th><code>docker run img</code></th>
+<th><code>docker run img bye</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>SET name "docker-lab"</code></td>
-<td><code>name</code> 이라는 키에 값을 저장</td>
+<td><strong>CMD</strong> <code>["echo","hello"]</code></td>
+<td>hello</td>
+<td><code>bye</code> 를 <strong>명령으로 실행 시도</strong> (오류)</td>
 </tr>
 <tr>
-<td><code>GET name</code></td>
-<td><code>name</code> 키에 저장된 값을 조회</td>
+<td><strong>ENTRYPOINT</strong> <code>["echo"]</code></td>
+<td>(빈 줄)</td>
+<td>bye (echo에 <strong>추가</strong>)</td>
 </tr>
 <tr>
-<td><code>SET count 1</code></td>
-<td><code>count</code> 키에 숫자 <code>1</code> 저장</td>
-</tr>
-<tr>
-<td><code>INCR count</code></td>
-<td><code>count</code> 값을 1 증가 (1 → 2)</td>
-</tr>
-<tr>
-<td><code>EXIT</code></td>
-<td>redis-cli 종료</td>
+<td><strong>ENTRYPOINT + CMD</strong></td>
+<td>hello</td>
+<td>bye</td>
 </tr>
 </tbody>
 </table>
-<h3 id="redis">redis 컨테이너 삭제 후 데이터 확인<a class="headerlink" href="#redis" title="Permanent link">&para;</a></h3>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>docker<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>myredis
-<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>myredis<span class="w"> </span>redis:alpine
-<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>myredis<span class="w"> </span>redis-cli
-<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>GET<span class="w"> </span>name
-</code></pre></div>
-<p>결과: <code>(nil)</code> — 컨테이너가 삭제되면서 데이터도 사라졌습니다.</p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>EXIT
-</code></pre></div>
-<hr />
-<h2 id="5-stop-start-restart-rm">5) 컨테이너 생명주기 — stop / start / restart / rm<a class="headerlink" href="#5-stop-start-restart-rm" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># 중지</span>
-<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>docker<span class="w"> </span>stop<span class="w"> </span>web1
-<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>docker<span class="w"> </span>ps<span class="w">        </span><span class="c1"># web1 사라짐</span>
-<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>docker<span class="w"> </span>ps<span class="w"> </span>-a<span class="w">     </span><span class="c1"># web1 존재는 함 (Exited 상태)</span>
-<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
-<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="c1"># 재시작 (컨테이너 재활용)</span>
-<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>docker<span class="w"> </span>start<span class="w"> </span>web1
-<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>docker<span class="w"> </span>ps<span class="w">        </span><span class="c1"># web1 다시 실행 중</span>
-<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a>
-<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="c1"># 재시작 (실행 중 상태에서)</span>
-<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>docker<span class="w"> </span>restart<span class="w"> </span>web1
-<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>
-<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="c1"># 삭제 (중지 후 삭제)</span>
-<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a>docker<span class="w"> </span>stop<span class="w"> </span>web1
-<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>docker<span class="w"> </span>rm<span class="w"> </span>web1
-<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>
-<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="c1"># 강제 삭제 (실행 중이어도)</span>
-<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>docker<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>myredis
-<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a>
-<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a><span class="c1"># 전체 확인</span>
-<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a>docker<span class="w"> </span>ps<span class="w"> </span>-a
-</code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">stop vs rm</p>
+<div class="admonition tip">
+<p class="admonition-title">한 문장 요약</p>
 <ul>
-<li><code>stop</code>: 컨테이너를 멈추지만 남겨둠 (start로 재활용 가능)</li>
-<li><code>rm</code>: 컨테이너를 완전히 삭제 (이미지는 남아있음)</li>
+<li><strong>CMD</strong> = 기본 명령. run 뒤에 인자를 주면 <strong>통째로 교체</strong>.</li>
+<li><strong>ENTRYPOINT</strong> = 실행할 프로그램을 <strong>고정</strong>. run 뒤 인자는 <strong>뒤에 추가</strong>.</li>
+<li>실무 패턴: <strong>ENTRYPOINT로 프로그램 고정 + CMD로 기본 인자</strong> (실험 C).</li>
 </ul>
 </div>
 <hr />
-<h2 id="6">6) 도전 과제: 버전 교체 체험<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
-<p>이미지: <code>skilleat/rollout-demo</code> (v1.0.0 / v2.0.0 / v3.0.0)
-컨테이너 포트: <code>8080</code></p>
-<table>
-<thead>
-<tr>
-<th>태그</th>
-<th>배경색</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>v1.0.0</td>
-<td>파란색</td>
-</tr>
-<tr>
-<td>v2.0.0</td>
-<td>초록색</td>
-</tr>
-<tr>
-<td>v3.0.0</td>
-<td>주황색</td>
-</tr>
-</tbody>
-</table>
-<h3 id="1">과제 1. 버전 교체<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
-<ul>
-<li><code>8083</code> 포트로 v1을 실행해 브라우저에서 <strong>파란색</strong> 페이지를 확인합니다.</li>
-<li>같은 포트(<code>8083</code>)에서 v2로 교체해 <strong>초록색</strong>으로 바뀌는 것을 확인합니다.</li>
-</ul>
-<h3 id="2">과제 2. 세 버전 동시 실행<a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
-<ul>
-<li>v1 / v2 / v3를 <strong>각각 다른 포트</strong>로 동시에 실행합니다.</li>
-<li>브라우저 탭 3개에서 파란색 / 초록색 / 주황색이 동시에 보이면 성공입니다.</li>
-<li>확인 후 실행한 컨테이너를 모두 정리합니다.</li>
-</ul>
+<h2 id="3">3) 레이어 캐시 — 왜 순서가 중요한가<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<p>Dockerfile은 한 줄마다 레이어를 만들고, <strong>바뀌지 않은 레이어는 캐시를 재사용</strong>합니다. 순서만 잘 잡아도 빌드가 훨씬 빨라져요.</p>
+<p>준비:</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>mkdir<span class="w"> </span>~/cache-demo<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/cache-demo
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;flask&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>requirements.txt
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;print(&quot;v1&quot;)&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>app.py
+</code></pre></div>
+<h3 id="copy">나쁜 순서 — 소스를 먼저 COPY<a class="headerlink" href="#copy" title="Permanent link">&para;</a></h3>
+<div class="language-dockerfile highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">python:3.12-slim</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;app.py&quot;</span><span class="p">]</span>
+</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>cache:bad<span class="w"> </span>.<span class="w">        </span><span class="c1"># 처음: pip install 실행 (느림)</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;print(&quot;v2&quot;)&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>app.py<span class="w">        </span><span class="c1"># 소스 한 줄 수정</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>cache:bad<span class="w"> </span>.<span class="w">        </span><span class="c1"># 다시: COPY . . 가 바뀌어 pip install &#39;또&#39; 실행 → 느림</span>
+</code></pre></div>
+<h3 id="_5">좋은 순서 — 의존성 먼저, 소스 나중<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<div class="language-dockerfile highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">FROM</span><span class="w"> </span><span class="s">python:3.12-slim</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">WORKDIR</span><span class="w"> </span><span class="s">/app</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="k">COPY</span><span class="w"> </span>requirements.txt<span class="w"> </span>.
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="k">COPY</span><span class="w"> </span>.<span class="w"> </span>.
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a><span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;python&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;app.py&quot;</span><span class="p">]</span>
+</code></pre></div>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>cache:good<span class="w"> </span>.<span class="w">       </span><span class="c1"># 처음: pip install 실행</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;print(&quot;v3&quot;)&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>app.py<span class="w">        </span><span class="c1"># 소스 한 줄 수정</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>docker<span class="w"> </span>build<span class="w"> </span>-t<span class="w"> </span>cache:good<span class="w"> </span>.<span class="w">       </span><span class="c1"># 다시: pip install은 CACHED → 매우 빠름!</span>
+</code></pre></div>
+<div class="admonition success">
+<p class="admonition-title">여기서 봐야 할 것</p>
+<p>두 번째 빌드 출력에서 <strong>좋은 순서</strong>는 <code>RUN pip install ...</code> 줄에 <strong><code>CACHED</code></strong> 가 뜨고 즉시 끝납니다.
+<strong>나쁜 순서</strong>는 소스만 바꿔도 매번 <code>pip install</code> 을 다시 하죠.
+→ <strong>자주 바뀌는 것(소스)은 아래쪽에</strong> 두는 게 캐시의 핵심입니다.</p>
+</div>
 <hr />
-<h2 id="_8">정리<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>명령어</th>
-<th>용도</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>docker run -it</code></td>
-<td>컨테이너에 직접 접속</td>
-</tr>
-<tr>
-<td><code>docker run -d</code></td>
-<td>백그라운드 실행</td>
-</tr>
-<tr>
-<td><code>docker ps / ps -a</code></td>
-<td>실행 중 / 전체 컨테이너 조회</td>
-</tr>
-<tr>
-<td><code>docker exec -it</code></td>
-<td>실행 중 컨테이너에 접속</td>
-</tr>
-<tr>
-<td><code>docker logs -f</code></td>
-<td>실시간 로그 추적</td>
-</tr>
-<tr>
-<td><code>docker stop / start</code></td>
-<td>중지 / 재시작</td>
-</tr>
-<tr>
-<td><code>docker rm / rm -f</code></td>
-<td>삭제 / 강제 삭제</td>
-</tr>
-</tbody>
-</table>
+<h2 id="_6">정리<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>docker<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>myweb<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
+</code></pre></div>
+<ul>
+<li>Dockerfile 한 줄 = 레이어 하나. <code>RUN</code> = 빌드 시점, <code>CMD</code>/<code>ENTRYPOINT</code> = 실행 시점.</li>
+<li><strong>CMD(교체) vs ENTRYPOINT(고정 + 추가)</strong>.</li>
+<li>자주 바뀌는 것을 아래에 두면 <strong>캐시가 살아</strong> 빌드가 빨라진다.</li>
+</ul>
+<p>→ 다음(1-7)에서는 이미지를 <strong>더 작게</strong> 만드는 멀티스테이지 빌드를 배웁니다.</p>
 
 
 
