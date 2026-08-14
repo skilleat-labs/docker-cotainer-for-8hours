@@ -12,13 +12,13 @@
         <meta name="author" content="Skilleat">
       
       
-        <link rel="canonical" href="https://skilleat-labs.github.io/docker-cotainer-for-8hours/day1/09-network/">
+        <link rel="canonical" href="https://skilleat-labs.github.io/docker-cotainer-for-8hours/day1/10-compose-intro/">
       
       
-        <link rel="prev" href="../08-volume/">
+        <link rel="prev" href="../09-1-challenge/">
       
       
-        <link rel="next" href="../09-1-challenge/">
+        <link rel="next" href="../11-compose-db/">
       
       
         
@@ -29,7 +29,7 @@
     
     
       
-        <title>1-9. Docker 네트워크 - Docker 컨테이너 실습 (8시간)</title>
+        <title>1-10. Docker Compose 맛보기 - Docker 컨테이너 실습 (8시간)</title>
       
     
     
@@ -82,7 +82,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-9-docker" class="md-skip">
+        <a href="#1-10-docker-compose" class="md-skip">
           콘텐츠로 이동
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1-9. Docker 네트워크
+              1-10. Docker Compose 맛보기
             
           </span>
         </div>
@@ -624,6 +624,62 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-network/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1-9. Docker 네트워크
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-1-challenge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1-9-1. [도전과제] 미니 블로그 (docker 명령)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -643,7 +699,7 @@
   <span class="md-ellipsis">
     
   
-    1-9. Docker 네트워크
+    1-10. Docker Compose 맛보기
   
 
     
@@ -661,7 +717,7 @@
   <span class="md-ellipsis">
     
   
-    1-9. Docker 네트워크
+    1-10. Docker Compose 맛보기
   
 
     
@@ -701,7 +757,7 @@
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1) 외부 → 컨테이너 : 포트 매핑 (복습)
+        1) 준비
       
     </span>
   </a>
@@ -709,10 +765,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-bridge" class="md-nav__link">
+  <a href="#2-composeyaml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2) 컨테이너끼리는? — 기본 bridge의 한계
+        2) compose.yaml 작성
       
     </span>
   </a>
@@ -723,7 +779,7 @@
   <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3) 사용자 정의 네트워크 — 이름으로 통신
+        3) 한 번에 띄우기
       
     </span>
   </a>
@@ -731,21 +787,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-app-db" class="md-nav__link">
+  <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4) 실전 — App 이 DB 에 '이름'으로 접속
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5) 네트워크 들여다보기
+        4) 로그 보고, 한 번에 내리기
       
     </span>
   </a>
@@ -767,62 +812,6 @@
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../09-1-challenge/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1-9-1. [도전과제] 미니 블로그 (docker 명령)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../10-compose-intro/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1-10. Docker Compose 맛보기
-  
-
-    
-  </span>
-  
-  
-
-      </a>
     </li>
   
 
@@ -904,7 +893,7 @@
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1) 외부 → 컨테이너 : 포트 매핑 (복습)
+        1) 준비
       
     </span>
   </a>
@@ -912,10 +901,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-bridge" class="md-nav__link">
+  <a href="#2-composeyaml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2) 컨테이너끼리는? — 기본 bridge의 한계
+        2) compose.yaml 작성
       
     </span>
   </a>
@@ -926,7 +915,7 @@
   <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3) 사용자 정의 네트워크 — 이름으로 통신
+        3) 한 번에 띄우기
       
     </span>
   </a>
@@ -934,21 +923,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-app-db" class="md-nav__link">
+  <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4) 실전 — App 이 DB 에 '이름'으로 접속
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5) 네트워크 들여다보기
+        4) 로그 보고, 한 번에 내리기
       
     </span>
   </a>
@@ -986,76 +964,58 @@
   
 
 
-<h1 id="1-9-docker">1-9. Docker 네트워크 — 컨테이너끼리 연결하기<a class="headerlink" href="#1-9-docker" title="Permanent link">&para;</a></h1>
+<h1 id="1-10-docker-compose">1-10. Docker Compose 맛보기<a class="headerlink" href="#1-10-docker-compose" title="Permanent link">&para;</a></h1>
 <div class="admonition abstract">
-<p class="admonition-title">밖에서 들어오기 &amp; 안에서 서로 통하기</p>
-<p>컨테이너 네트워크는 크게 두 가지입니다.
-<strong>① 외부 → 컨테이너</strong>(포트 매핑)와 <strong>② 컨테이너 ↔ 컨테이너</strong>(이름으로 통신).
-이번 실습에서 둘 다 직접 만들어봅니다.</p>
+<p class="admonition-title">여러 컨테이너를 파일 하나로, 한 번에</p>
+<p>지금까지는 <code>docker run</code> 으로 컨테이너를 <strong>하나씩</strong> 띄웠죠. 서비스가 여러 개면 명령도 여러 번, 옵션도 길어집니다.
+<strong>Docker Compose</strong> 는 이 구성을 <strong>YAML 파일 하나</strong>로 적어두고 <strong>한 번에</strong> 띄우고 내리는 도구예요.</p>
 </div>
 <h2 id="_1">실습 목표<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>포트 매핑으로 <strong>외부에서</strong> 컨테이너에 접속한다</li>
-<li>사용자 정의 네트워크에서 컨테이너를 <strong>'이름'으로</strong> 통신시킨다</li>
-<li>기본 bridge 와 사용자 정의 네트워크의 차이를 이해한다</li>
+<li>Compose가 무엇인지 이해한다</li>
+<li><code>docker compose up</code> 한 번으로 여러 컨테이너를 띄우고 내린다</li>
 </ul>
 <hr />
-<h2 id="1">1) 외부 → 컨테이너 : 포트 매핑 (복습)<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>web<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>nginx
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>curl<span class="w"> </span>-I<span class="w"> </span>http://192.168.56.10:8080<span class="w">     </span><span class="c1"># 내 PC(호스트)에서 접속</span>
+<h2 id="1">1) 준비<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>~/compose-intro<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/compose-intro
 </code></pre></div>
-<p><code>-p 8080:80</code> = 호스트 8080 → 컨테이너 80. 외부에서 들어오는 길은 <strong>포트 매핑</strong>입니다.</p>
-<hr />
-<h2 id="2-bridge">2) 컨테이너끼리는? — 기본 bridge의 한계<a class="headerlink" href="#2-bridge" title="Permanent link">&para;</a></h2>
-<p>기본 네트워크에 있는 컨테이너는 <strong>이름으로 서로를 못 찾습니다.</strong> 직접 확인해봅시다.</p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>def1<span class="w"> </span>nginx
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>alpine<span class="w"> </span>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span>def1<span class="w">     </span><span class="c1"># → bad address &#39;def1&#39;  (이름 통신 X)</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>docker<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>def1
-</code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">왜 안 되나요?</p>
-<p>Docker의 <strong>기본 bridge</strong> 네트워크는 이름 → IP 변환(DNS)을 안 해줍니다.
-그래서 컨테이너끼리 이름으로 통신하려면 <strong>사용자 정의 네트워크</strong>가 필요해요.</p>
-</div>
-<hr />
-<h2 id="3">3) 사용자 정의 네트워크 — 이름으로 통신<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>network<span class="w"> </span>create<span class="w"> </span>appnet
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>c1<span class="w"> </span>--network<span class="w"> </span>appnet<span class="w"> </span>nginx
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--network<span class="w"> </span>appnet<span class="w"> </span>alpine<span class="w"> </span>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">3</span><span class="w"> </span>c1<span class="w">     </span><span class="c1"># → 이름 c1 으로 통신됨!</span>
-</code></pre></div>
-<div class="admonition success">
-<p class="admonition-title">확인</p>
-<p>같은 사용자 네트워크(<code>appnet</code>)에 붙으면, <strong>IP를 몰라도 컨테이너 이름(<code>c1</code>)</strong> 으로 통신됩니다.
-(사용자 정의 네트워크는 내부 DNS를 제공하기 때문)</p>
-</div>
-<hr />
-<h2 id="4-app-db">4) 실전 — App 이 DB 에 '이름'으로 접속<a class="headerlink" href="#4-app-db" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>db<span class="w"> </span>--network<span class="w"> </span>appnet<span class="w"> </span>-e<span class="w"> </span><span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>pass<span class="w"> </span>postgres:16
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--network<span class="w"> </span>appnet<span class="w"> </span>-e<span class="w"> </span><span class="nv">PGPASSWORD</span><span class="o">=</span>pass<span class="w"> </span>postgres:16<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span>psql<span class="w"> </span>-h<span class="w"> </span>db<span class="w"> </span>-U<span class="w"> </span>postgres<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;SELECT &#39;connected!&#39; AS result;&quot;</span>
-</code></pre></div>
-<p>→ <code>-h db</code> 처럼 <strong>IP가 아닌 이름 <code>db</code></strong> 로 접속됩니다. 실제 웹앱이 DB에 붙는 방식이 이거예요.</p>
-<pre class="mermaid"><code>flowchart LR
-  U["호스트&lt;br/&gt;(브라우저)"] --&gt;|"8080:80 포트매핑"| WEB["web :80"]
-  subgraph NET["사용자 네트워크: appnet"]
-    WEB --&gt;|"host=db (이름)"| DB["db :5432"]
-  end</code></pre>
-<hr />
-<h2 id="5">5) 네트워크 들여다보기<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>network<span class="w"> </span>ls<span class="w">                 </span><span class="c1"># 네트워크 목록</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>docker<span class="w"> </span>network<span class="w"> </span>inspect<span class="w"> </span>appnet<span class="w">     </span><span class="c1"># appnet에 붙은 컨테이너 확인</span>
-</code></pre></div>
-<hr />
-<h2 id="_2">정리<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p><strong>실습 정리(삭제):</strong></p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>web<span class="w"> </span>c1<span class="w"> </span>db<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>docker<span class="w"> </span>network<span class="w"> </span>rm<span class="w"> </span>appnet<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
+<h2 id="2-composeyaml">2) compose.yaml 작성<a class="headerlink" href="#2-composeyaml" title="Permanent link">&para;</a></h2>
+<p><code>compose.yaml</code> 파일을 아래 내용으로 만듭니다.</p>
+<div class="language-yaml highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">services</span><span class="p">:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">web</span><span class="p">:</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:latest</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8080:80&quot;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">cache</span><span class="p">:</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis:latest</span>
 </code></pre></div>
 <ul>
-<li><strong>외부 → 컨테이너</strong> : 포트 매핑(<code>-p</code>).</li>
-<li><strong>컨테이너 ↔ 컨테이너</strong> : 같은 <strong>사용자 정의 네트워크</strong> + <strong>이름</strong>(DNS).</li>
-<li>기본 bridge는 이름 통신이 안 되니, 여러 컨테이너를 엮을 땐 <strong>네트워크를 직접 만들어</strong> 붙이자.</li>
+<li><code>services</code> : 띄울 컨테이너들 (여기선 <code>web</code>, <code>cache</code>)</li>
+<li><code>web</code> : nginx, 호스트 <code>8080</code> → 컨테이너 <code>80</code></li>
+<li><code>cache</code> : redis (그냥 실행)</li>
 </ul>
+<p>→ <code>docker run</code> 두 번 칠 걸, 파일 하나에 적어둔 것뿐이에요.</p>
+<h2 id="3">3) 한 번에 띄우기<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>ps
+</code></pre></div>
+<p>→ <code>web</code> 과 <code>cache</code> <strong>두 컨테이너가 한 번에</strong> Up 됩니다.</p>
+<p><strong>확인</strong> — 내 PC 브라우저에서 <code>http://192.168.56.10:8080</code> → nginx 페이지가 뜨면 성공.</p>
+<h2 id="4">4) 로그 보고, 한 번에 내리기<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>logs
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>down
+</code></pre></div>
+<p><code>down</code> 한 번이면 두 컨테이너가 <strong>한꺼번에</strong> 정리됩니다.</p>
+<hr />
+<h2 id="_2">정리<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Compose = 여러 컨테이너 구성을 YAML 하나로 선언 → <code>up</code> / <code>down</code> 한 방.</strong></li>
+<li><code>docker run</code> 을 여러 번 외우는 대신, <strong>구성을 파일로 남긴다.</strong></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title"><code>docker compose</code> (v2)</p>
+<p>최신 Docker는 띄어쓰기 있는 <code>docker compose</code> 를 씁니다. (예전 <code>docker-compose</code> 아님)</p>
+</div>
 
 
 

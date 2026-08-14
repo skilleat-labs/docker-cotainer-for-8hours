@@ -12,13 +12,11 @@
         <meta name="author" content="Skilleat">
       
       
-        <link rel="canonical" href="https://skilleat-labs.github.io/docker-cotainer-for-8hours/day1/09-network/">
+        <link rel="canonical" href="https://skilleat-labs.github.io/docker-cotainer-for-8hours/day1/11-compose-db/">
       
       
-        <link rel="prev" href="../08-volume/">
+        <link rel="prev" href="../10-compose-intro/">
       
-      
-        <link rel="next" href="../09-1-challenge/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>1-9. Docker 네트워크 - Docker 컨테이너 실습 (8시간)</title>
+        <title>1-11. Compose로 웹 도구 + DB 띄우기 - Docker 컨테이너 실습 (8시간)</title>
       
     
     
@@ -82,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-9-docker" class="md-skip">
+        <a href="#1-11-compose-db" class="md-skip">
           콘텐츠로 이동
         </a>
       
@@ -118,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1-9. Docker 네트워크
+              1-11. Compose로 웹 도구 + DB 띄우기
             
           </span>
         </div>
@@ -624,37 +622,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1-9. Docker 네트워크
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../09-network/" class="md-nav__link">
         
   
   
@@ -670,103 +641,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="목차">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      목차
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 목표
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1) 외부 → 컨테이너 : 포트 매핑 (복습)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-bridge" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2) 컨테이너끼리는? — 기본 bridge의 한계
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3) 사용자 정의 네트워크 — 이름으로 통신
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-app-db" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4) 실전 — App 이 DB 에 '이름'으로 접속
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5) 네트워크 들여다보기
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        정리
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -832,10 +706,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../11-compose-db/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1-11. Compose로 웹 도구 + DB 띄우기
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -851,6 +752,114 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        실습 목표
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        만들 것
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) 준비
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-composeyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) compose.yaml 작성
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) 띄우기
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-db" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) 브라우저에서 DB 접속
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) (선택) 데이터 영속성 확인
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        정리 (삭제)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -901,10 +910,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1) 외부 → 컨테이너 : 포트 매핑 (복습)
+        만들 것
       
     </span>
   </a>
@@ -912,10 +921,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-bridge" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2) 컨테이너끼리는? — 기본 bridge의 한계
+        1) 준비
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-composeyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) compose.yaml 작성
       
     </span>
   </a>
@@ -926,7 +946,7 @@
   <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3) 사용자 정의 네트워크 — 이름으로 통신
+        3) 띄우기
       
     </span>
   </a>
@@ -934,10 +954,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-app-db" class="md-nav__link">
+  <a href="#4-db" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4) 실전 — App 이 DB 에 '이름'으로 접속
+        4) 브라우저에서 DB 접속
       
     </span>
   </a>
@@ -948,7 +968,7 @@
   <a href="#5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5) 네트워크 들여다보기
+        5) (선택) 데이터 영속성 확인
       
     </span>
   </a>
@@ -956,10 +976,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        정리
+        정리 (삭제)
       
     </span>
   </a>
@@ -986,75 +1006,103 @@
   
 
 
-<h1 id="1-9-docker">1-9. Docker 네트워크 — 컨테이너끼리 연결하기<a class="headerlink" href="#1-9-docker" title="Permanent link">&para;</a></h1>
+<h1 id="1-11-compose-db">1-11. Compose로 웹 도구 + DB 띄우기<a class="headerlink" href="#1-11-compose-db" title="Permanent link">&para;</a></h1>
 <div class="admonition abstract">
-<p class="admonition-title">밖에서 들어오기 &amp; 안에서 서로 통하기</p>
-<p>컨테이너 네트워크는 크게 두 가지입니다.
-<strong>① 외부 → 컨테이너</strong>(포트 매핑)와 <strong>② 컨테이너 ↔ 컨테이너</strong>(이름으로 통신).
-이번 실습에서 둘 다 직접 만들어봅니다.</p>
+<p class="admonition-title">서로 통신하는 스택을 한 파일로</p>
+<p>이번엔 서비스가 <strong>서로 연결</strong>되는 스택을 Compose로 띄웁니다. Docker Hub 이미지만 쓰니 빌드도 없고 오류 걱정도 없어요.</p>
 </div>
 <h2 id="_1">실습 목표<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <ul>
-<li>포트 매핑으로 <strong>외부에서</strong> 컨테이너에 접속한다</li>
-<li>사용자 정의 네트워크에서 컨테이너를 <strong>'이름'으로</strong> 통신시킨다</li>
-<li>기본 bridge 와 사용자 정의 네트워크의 차이를 이해한다</li>
+<li>여러 서비스가 <strong>이름으로 통신</strong>하는 걸 확인한다</li>
+<li><code>environment</code> · <code>volumes</code> · <code>depends_on</code> 을 써본다</li>
+</ul>
+<h2 id="_2">만들 것<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>db</strong> : PostgreSQL (데이터 저장)</li>
+<li><strong>adminer</strong> : DB를 웹에서 다루는 GUI 도구 → 브라우저에서 <code>db</code> 에 접속</li>
 </ul>
 <hr />
-<h2 id="1">1) 외부 → 컨테이너 : 포트 매핑 (복습)<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>web<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>nginx
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>curl<span class="w"> </span>-I<span class="w"> </span>http://192.168.56.10:8080<span class="w">     </span><span class="c1"># 내 PC(호스트)에서 접속</span>
+<h2 id="1">1) 준비<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>mkdir<span class="w"> </span>~/compose-db<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/compose-db
 </code></pre></div>
-<p><code>-p 8080:80</code> = 호스트 8080 → 컨테이너 80. 외부에서 들어오는 길은 <strong>포트 매핑</strong>입니다.</p>
-<hr />
-<h2 id="2-bridge">2) 컨테이너끼리는? — 기본 bridge의 한계<a class="headerlink" href="#2-bridge" title="Permanent link">&para;</a></h2>
-<p>기본 네트워크에 있는 컨테이너는 <strong>이름으로 서로를 못 찾습니다.</strong> 직접 확인해봅시다.</p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>def1<span class="w"> </span>nginx
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>alpine<span class="w"> </span>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">1</span><span class="w"> </span>def1<span class="w">     </span><span class="c1"># → bad address &#39;def1&#39;  (이름 통신 X)</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>docker<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>def1
-</code></pre></div>
-<div class="admonition warning">
-<p class="admonition-title">왜 안 되나요?</p>
-<p>Docker의 <strong>기본 bridge</strong> 네트워크는 이름 → IP 변환(DNS)을 안 해줍니다.
-그래서 컨테이너끼리 이름으로 통신하려면 <strong>사용자 정의 네트워크</strong>가 필요해요.</p>
-</div>
-<hr />
-<h2 id="3">3) 사용자 정의 네트워크 — 이름으로 통신<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>network<span class="w"> </span>create<span class="w"> </span>appnet
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>c1<span class="w"> </span>--network<span class="w"> </span>appnet<span class="w"> </span>nginx
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--network<span class="w"> </span>appnet<span class="w"> </span>alpine<span class="w"> </span>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">3</span><span class="w"> </span>c1<span class="w">     </span><span class="c1"># → 이름 c1 으로 통신됨!</span>
-</code></pre></div>
-<div class="admonition success">
-<p class="admonition-title">확인</p>
-<p>같은 사용자 네트워크(<code>appnet</code>)에 붙으면, <strong>IP를 몰라도 컨테이너 이름(<code>c1</code>)</strong> 으로 통신됩니다.
-(사용자 정의 네트워크는 내부 DNS를 제공하기 때문)</p>
-</div>
-<hr />
-<h2 id="4-app-db">4) 실전 — App 이 DB 에 '이름'으로 접속<a class="headerlink" href="#4-app-db" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>db<span class="w"> </span>--network<span class="w"> </span>appnet<span class="w"> </span>-e<span class="w"> </span><span class="nv">POSTGRES_PASSWORD</span><span class="o">=</span>pass<span class="w"> </span>postgres:16
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>docker<span class="w"> </span>run<span class="w"> </span>--rm<span class="w"> </span>--network<span class="w"> </span>appnet<span class="w"> </span>-e<span class="w"> </span><span class="nv">PGPASSWORD</span><span class="o">=</span>pass<span class="w"> </span>postgres:16<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span>psql<span class="w"> </span>-h<span class="w"> </span>db<span class="w"> </span>-U<span class="w"> </span>postgres<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;SELECT &#39;connected!&#39; AS result;&quot;</span>
-</code></pre></div>
-<p>→ <code>-h db</code> 처럼 <strong>IP가 아닌 이름 <code>db</code></strong> 로 접속됩니다. 실제 웹앱이 DB에 붙는 방식이 이거예요.</p>
-<pre class="mermaid"><code>flowchart LR
-  U["호스트&lt;br/&gt;(브라우저)"] --&gt;|"8080:80 포트매핑"| WEB["web :80"]
-  subgraph NET["사용자 네트워크: appnet"]
-    WEB --&gt;|"host=db (이름)"| DB["db :5432"]
-  end</code></pre>
-<hr />
-<h2 id="5">5) 네트워크 들여다보기<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>network<span class="w"> </span>ls<span class="w">                 </span><span class="c1"># 네트워크 목록</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>docker<span class="w"> </span>network<span class="w"> </span>inspect<span class="w"> </span>appnet<span class="w">     </span><span class="c1"># appnet에 붙은 컨테이너 확인</span>
-</code></pre></div>
-<hr />
-<h2 id="_2">정리<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p><strong>실습 정리(삭제):</strong></p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>web<span class="w"> </span>c1<span class="w"> </span>db<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>docker<span class="w"> </span>network<span class="w"> </span>rm<span class="w"> </span>appnet<span class="w"> </span><span class="m">2</span>&gt;/dev/null<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
+<h2 id="2-composeyaml">2) compose.yaml 작성<a class="headerlink" href="#2-composeyaml" title="Permanent link">&para;</a></h2>
+<div class="language-yaml highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">services</span><span class="p">:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">db</span><span class="p">:</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">postgres:16</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">environment</span><span class="p">:</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="nt">POSTGRES_PASSWORD</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pass</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="nt">POSTGRES_DB</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mydb</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dbdata:/var/lib/postgresql/data</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">adminer</span><span class="p">:</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">adminer:latest</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8081:8080&quot;</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nt">depends_on</span><span class="p">:</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">db</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="nt">volumes</span><span class="p">:</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">  </span><span class="nt">dbdata</span><span class="p">:</span>
 </code></pre></div>
 <ul>
-<li><strong>외부 → 컨테이너</strong> : 포트 매핑(<code>-p</code>).</li>
-<li><strong>컨테이너 ↔ 컨테이너</strong> : 같은 <strong>사용자 정의 네트워크</strong> + <strong>이름</strong>(DNS).</li>
-<li>기본 bridge는 이름 통신이 안 되니, 여러 컨테이너를 엮을 땐 <strong>네트워크를 직접 만들어</strong> 붙이자.</li>
+<li><code>db</code> : postgres, 비밀번호·DB이름을 <strong>environment</strong> 로 주입, 데이터는 <strong><code>dbdata</code> 볼륨</strong>에 저장</li>
+<li><code>adminer</code> : DB GUI, 호스트 <code>8081</code> → 컨테이너 <code>8080</code>, <code>db</code> 가 뜬 뒤 시작(<strong>depends_on</strong>)</li>
+<li>맨 아래 <code>volumes: dbdata</code> : named volume 선언</li>
+</ul>
+<h2 id="3">3) 띄우기<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>ps
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">10초 정도 기다렸다가 접속</p>
+<p>postgres가 처음 켜질 때 초기화에 몇 초 걸립니다. 잠깐 기다렸다가 접속하세요.</p>
+</div>
+<h2 id="4-db">4) 브라우저에서 DB 접속<a class="headerlink" href="#4-db" title="Permanent link">&para;</a></h2>
+<p><code>http://192.168.56.10:8081</code> (Adminer) 접속 후 아래 값으로 로그인:</p>
+<table>
+<thead>
+<tr>
+<th>항목</th>
+<th>값</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>시스템</td>
+<td>PostgreSQL</td>
+</tr>
+<tr>
+<td><strong>서버</strong></td>
+<td><strong>db</strong>　← 컨테이너 '이름'으로 접속!</td>
+</tr>
+<tr>
+<td>사용자</td>
+<td>postgres</td>
+</tr>
+<tr>
+<td>비밀번호</td>
+<td>pass</td>
+</tr>
+<tr>
+<td>데이터베이스</td>
+<td>mydb</td>
+</tr>
+</tbody>
+</table>
+<p>→ 로그인되면, adminer가 <strong><code>db</code> 라는 이름으로</strong> postgres에 접속한 것입니다. (같은 compose 네트워크 + 이름 DNS)</p>
+<h2 id="5">5) (선택) 데이터 영속성 확인<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
+<p>Adminer에서 테이블을 하나 만든 뒤:</p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>down
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div>
+<p>→ 다시 접속하면 그 테이블이 <strong>그대로</strong> 있습니다. (볼륨 덕분에 유지)</p>
+<hr />
+<h2 id="_3">정리 (삭제)<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>down<span class="w"> </span>-v<span class="w">      </span><span class="c1"># -v 는 볼륨까지 삭제</span>
+</code></pre></div>
+<ul>
+<li>서비스는 <strong>이름으로</strong> 통신한다 (adminer → <code>db</code>)</li>
+<li><strong>environment</strong>(설정 주입) · <strong>volumes</strong>(영속성) · <strong>depends_on</strong>(시작 순서) 를 한 파일에 담았다</li>
 </ul>
 
 
