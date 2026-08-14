@@ -12,13 +12,11 @@
         <meta name="author" content="Skilleat">
       
       
-        <link rel="canonical" href="https://skilleat-labs.github.io/docker-cotainer-for-8hours/day1/10-compose-intro/">
+        <link rel="canonical" href="https://skilleat-labs.github.io/docker-cotainer-for-8hours/day1/12-compose-challenge/">
       
       
-        <link rel="prev" href="../09-1-challenge/">
+        <link rel="prev" href="../11-compose-db/">
       
-      
-        <link rel="next" href="../11-compose-db/">
       
       
         
@@ -29,7 +27,7 @@
     
     
       
-        <title>1-10. Docker Compose 맛보기 - Docker 컨테이너 실습 (8시간)</title>
+        <title>1-12. [도전과제] 미니 블로그 완성하기 - Docker 컨테이너 실습 (8시간)</title>
       
     
     
@@ -82,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#1-10-docker-compose" class="md-skip">
+        <a href="#1-12" class="md-skip">
           콘텐츠로 이동
         </a>
       
@@ -118,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              1-10. Docker Compose 맛보기
+              1-12. [도전과제] 미니 블로그 완성하기
             
           </span>
         </div>
@@ -680,37 +678,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    1-10. Docker Compose 맛보기
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../10-compose-intro/" class="md-nav__link">
         
   
   
@@ -726,125 +697,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="목차">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      목차
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        실습 목표
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-compose-before-after" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1) 왜 Compose를 쓰나? (before / after)
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        2) 준비
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-composeyaml" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        3) compose.yaml 작성 &amp; 한 줄씩 이해하기
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        4) 한 번에 띄우기
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        5) 안을 들여다보기
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        6) 한 번에 내리기
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#compose" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        자주 쓰는 Compose 명령어
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        정리
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -882,10 +734,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../12-compose-challenge/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1-12. [도전과제] 미니 블로그 완성하기
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -901,6 +780,114 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="목차">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      목차
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) 사용할 이미지
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) 사용자 정의 네트워크
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) backend 서비스 (먼저 정의)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) frontend 서비스
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-composeyaml" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) 🎯 compose.yaml 을 완성하세요
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6) 웹 접속 및 데이터 확인
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7) 추가 검증
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ✅ 통과 기준
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -940,21 +927,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        실습 목표
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-compose-before-after" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        1) 왜 Compose를 쓰나? (before / after)
+        1) 사용할 이미지
       
     </span>
   </a>
@@ -965,7 +941,7 @@
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2) 준비
+        2) 사용자 정의 네트워크
       
     </span>
   </a>
@@ -973,10 +949,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-composeyaml" class="md-nav__link">
+  <a href="#3-backend" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3) compose.yaml 작성 &amp; 한 줄씩 이해하기
+        3) backend 서비스 (먼저 정의)
       
     </span>
   </a>
@@ -984,10 +960,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4" class="md-nav__link">
+  <a href="#4-frontend" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4) 한 번에 띄우기
+        4) frontend 서비스
       
     </span>
   </a>
@@ -995,10 +971,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5" class="md-nav__link">
+  <a href="#5-composeyaml" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5) 안을 들여다보기
+        5) 🎯 compose.yaml 을 완성하세요
       
     </span>
   </a>
@@ -1009,7 +985,7 @@
   <a href="#6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6) 한 번에 내리기
+        6) 웹 접속 및 데이터 확인
       
     </span>
   </a>
@@ -1017,10 +993,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#compose" class="md-nav__link">
+  <a href="#7" class="md-nav__link">
     <span class="md-ellipsis">
       
-        자주 쓰는 Compose 명령어
+        7) 추가 검증
       
     </span>
   </a>
@@ -1028,10 +1004,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        정리
+        ✅ 통과 기준
       
     </span>
   </a>
@@ -1058,162 +1034,90 @@
   
 
 
-<h1 id="1-10-docker-compose">1-10. Docker Compose 맛보기<a class="headerlink" href="#1-10-docker-compose" title="Permanent link">&para;</a></h1>
+<h1 id="1-12">1-12. [도전과제] 미니 블로그 완성하기<a class="headerlink" href="#1-12" title="Permanent link">&para;</a></h1>
 <div class="admonition abstract">
-<p class="admonition-title">여러 컨테이너를 파일 하나로, 한 번에</p>
-<p>지금까지는 <code>docker run</code> 으로 컨테이너를 <strong>하나씩</strong> 띄웠죠. 서비스가 여러 개면 명령도 여러 번, 옵션도 길어집니다.
-<strong>Docker Compose</strong> 는 이 구성을 <strong>YAML 파일 하나</strong>로 적어두고 <strong>한 번에</strong> 띄우고 내리는 도구예요.</p>
+<p class="admonition-title">Compose로 frontend + backend 를 엮어 미니 블로그를 완성하세요</p>
+<p>요구사항만 주어집니다. <strong><code>compose.yaml</code> 을 직접 완성</strong>해서, 새 글이 저장되고 컨테이너를 지워도 데이터가 남게 만드세요.</p>
 </div>
-<h2 id="_1">실습 목표<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Compose가 <strong>왜</strong> 필요한지 이해한다</li>
-<li><code>compose.yaml</code> 을 <strong>읽고</strong> 직접 작성한다</li>
-<li><code>docker compose up</code> 한 번으로 여러 컨테이너를 띄우고 내린다</li>
-</ul>
-<hr />
-<h2 id="1-compose-before-after">1) 왜 Compose를 쓰나? (before / after)<a class="headerlink" href="#1-compose-before-after" title="Permanent link">&para;</a></h2>
-<p>nginx 웹서버 + redis 캐시를 띄운다고 해봅시다.</p>
-<p><strong>Before — <code>docker run</code> 으로 하나씩</strong> 😵</p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>web<span class="w"> </span>-p<span class="w"> </span><span class="m">8080</span>:80<span class="w"> </span>nginx:latest
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span>--name<span class="w"> </span>cache<span class="w"> </span>redis:latest
-</code></pre></div>
-<p>컨테이너가 3개, 5개로 늘면? 옵션까지 길어져 외우기도, 공유하기도 힘듭니다.</p>
-<p><strong>After — <code>compose.yaml</code> 파일 하나</strong> 😌</p>
-<div class="language-yaml highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">services</span><span class="p">:</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">web</span><span class="p">:</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:latest</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8080:80&quot;</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="nt">cache</span><span class="p">:</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis:latest</span>
-</code></pre></div>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w">      </span><span class="c1"># 이 한 줄로 둘 다 실행</span>
-</code></pre></div>
-<p>→ <strong>구성을 '명령'이 아니라 '파일'로</strong> 남기니, 누가 실행해도 똑같고 git으로 관리도 됩니다.</p>
-<hr />
-<h2 id="2">2) 준비<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>mkdir<span class="w"> </span>~/compose-intro<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/compose-intro
-</code></pre></div>
-<h2 id="3-composeyaml">3) compose.yaml 작성 &amp; 한 줄씩 이해하기<a class="headerlink" href="#3-composeyaml" title="Permanent link">&para;</a></h2>
-<p><code>compose.yaml</code> 파일을 아래 내용으로 만듭니다.</p>
-<div class="language-yaml highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">services</span><span class="p">:</span><span class="w">          </span><span class="c1"># (1) 띄울 컨테이너들의 묶음</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">  </span><span class="nt">web</span><span class="p">:</span><span class="w">             </span><span class="c1"># (2) 서비스 이름 (컨테이너 별명이 됨)</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:latest</span><span class="w">      </span><span class="c1"># (3) 사용할 이미지</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8080:80&quot;</span><span class="w">            </span><span class="c1"># (4) 호스트 8080 → 컨테이너 80</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">cache</span><span class="p">:</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis:latest</span>
-</code></pre></div>
+<h2 id="1">1) 사용할 이미지<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
-<th>번호</th>
-<th>뜻</th>
+<th>서비스</th>
+<th>이미지</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>(1) <code>services</code></td>
-<td>여기 아래에 띄울 컨테이너들을 나열</td>
+<td>frontend</td>
+<td><code>skilleat/frontend:v4-kb5</code></td>
 </tr>
 <tr>
-<td>(2) <code>web</code> / <code>cache</code></td>
-<td><strong>서비스 이름</strong> — 컨테이너 이름이자, 서로 부를 때의 주소가 됨</td>
-</tr>
-<tr>
-<td>(3) <code>image</code></td>
-<td><code>docker run</code> 의 이미지와 같음</td>
-</tr>
-<tr>
-<td>(4) <code>ports</code></td>
-<td><code>docker run -p</code> 와 같음 (<code>"호스트:컨테이너"</code>)</td>
+<td>backend</td>
+<td><code>skilleat/backend:v4-kb5</code></td>
 </tr>
 </tbody>
 </table>
-<div class="admonition warning">
-<p class="admonition-title">YAML은 '들여쓰기'가 생명</p>
+<h2 id="2">2) 사용자 정의 네트워크<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong><code>Tab</code> 대신 스페이스(공백)</strong> 로 들여쓰세요.</li>
-<li>같은 계층은 <strong>칸 수를 똑같이</strong> 맞춰야 합니다. 어긋나면 <code>up</code> 할 때 에러가 납니다.</li>
+<li>컨테이너들이 통신할 <strong>전용 네트워크</strong>를 만들어 실행하세요. (이름은 자유)</li>
+<li><strong>frontend 와 backend 는 반드시 같은 네트워크</strong> 안에서 실행되어야 합니다.</li>
 </ul>
-</div>
-<h2 id="4">4) 한 번에 띄우기<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>ps
-</code></pre></div>
-<p>→ <code>web</code> 과 <code>cache</code> <strong>두 컨테이너가 한 번에</strong> Up.</p>
-<div class="admonition tip">
-<p class="admonition-title"><code>-d</code> 는 무슨 뜻? (up vs up -d)</p>
+<h2 id="3-backend">3) backend 서비스 (먼저 정의)<a class="headerlink" href="#3-backend" title="Permanent link">&para;</a></h2>
 <ul>
-<li><code>docker compose up</code> : <strong>앞단(foreground)</strong> 실행 → 로그가 화면에 흐르고, <code>Ctrl + C</code> 로 멈춤</li>
-<li><code>docker compose up -d</code> : <strong>백그라운드</strong>로 실행 → 터미널을 계속 쓸 수 있음</li>
+<li>컨테이너 이름은 반드시 <strong><code>backend-service</code></strong> 여야 합니다.</li>
+<li>내부 포트는 <strong><code>5000</code></strong> 을 사용합니다.</li>
+<li>backend 가 frontend 보다 <strong>먼저</strong> 실행되어야 합니다.</li>
+<li>backend 의 데이터(<code>data.json</code>)는 <strong>컨테이너를 삭제해도 유지</strong>되어야 합니다.</li>
+<li>전용 <strong>볼륨(volume)</strong> 을 붙여 영구 저장되게 하세요. (컨테이너 마운트 경로 <strong><code>/app/</code></strong>)</li>
 </ul>
-</div>
-<p><strong>확인</strong> — 내 PC 브라우저에서 <code>http://192.168.56.10:8080</code> → nginx 페이지가 뜨면 성공.</p>
-<h2 id="5">5) 안을 들여다보기<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
-<p><strong>로그 보기</strong></p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w">          </span><span class="c1"># 전체 로그</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>web<span class="w">      </span><span class="c1"># web 서비스만</span>
-</code></pre></div>
-<p><strong>Compose가 자동으로 만들어 준 '네트워크' 확인</strong></p>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>docker<span class="w"> </span>network<span class="w"> </span>ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>compose-intro
-</code></pre></div>
-<div class="admonition info">
-<p class="admonition-title">Compose는 네트워크를 자동으로 만들어 줍니다</p>
-<p><code>up</code> 하면 이 스택 전용 네트워크가 자동 생성되고, <strong>같은 파일 안의 서비스들은 서로 '이름'으로 통신</strong>할 수 있습니다.
-(예: web 안에서 <code>cache</code> 라는 이름으로 redis에 접근 가능) — 이 부분은 <strong>1-11</strong> 에서 직접 확인해요.</p>
-</div>
-<h2 id="6">6) 한 번에 내리기<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
-<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>docker<span class="w"> </span>compose<span class="w"> </span>down
-</code></pre></div>
-<p><code>down</code> 한 번이면 컨테이너와 자동 생성된 네트워크까지 <strong>한꺼번에</strong> 정리됩니다.</p>
-<hr />
-<h2 id="compose">자주 쓰는 Compose 명령어<a class="headerlink" href="#compose" title="Permanent link">&para;</a></h2>
-<table>
-<thead>
-<tr>
-<th>명령</th>
-<th>하는 일</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>docker compose up -d</code></td>
-<td>스택을 백그라운드로 띄움</td>
-</tr>
-<tr>
-<td><code>docker compose ps</code></td>
-<td>이 스택의 컨테이너 상태</td>
-</tr>
-<tr>
-<td><code>docker compose logs [서비스]</code></td>
-<td>로그 보기</td>
-</tr>
-<tr>
-<td><code>docker compose stop</code> / <code>start</code></td>
-<td>멈춤 / 다시 시작 (삭제 X)</td>
-</tr>
-<tr>
-<td><code>docker compose down</code></td>
-<td>컨테이너·네트워크 정리</td>
-</tr>
-<tr>
-<td><code>docker compose down -v</code></td>
-<td>볼륨까지 함께 삭제</td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="_2">정리<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h2 id="4-frontend">4) frontend 서비스<a class="headerlink" href="#4-frontend" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>Compose = 여러 컨테이너 구성을 YAML 하나로 선언 → <code>up</code> / <code>down</code> 한 방.</strong></li>
-<li><code>docker run</code> 을 여러 번 외우는 대신, <strong>구성을 파일로 남긴다</strong> (재현성·공유·버전관리).</li>
-<li><code>up</code> 하면 <strong>전용 네트워크가 자동 생성</strong>되어 서비스끼리 이름으로 통신할 수 있다. (→ 1-11)</li>
+<li>backend 와 <strong>동일한 네트워크</strong> 안에서 실행됩니다.</li>
+<li>외부 접속 포트는 <strong><code>8080</code></strong>, 컨테이너 내부 포트는 <strong><code>80</code></strong> 입니다.</li>
+<li>frontend 는 backend 가 먼저 실행된 후 정상 동작합니다. → <strong><code>depends_on</code></strong> 활용</li>
+</ul>
+<h2 id="5-composeyaml">5) 🎯 compose.yaml 을 완성하세요<a class="headerlink" href="#5-composeyaml" title="Permanent link">&para;</a></h2>
+<p>아래 조건을 <strong>모두</strong> 만족하는 <code>compose.yaml</code> 을 작성합니다.</p>
+<ul>
+<li>두 개의 서비스(frontend, backend)가 모두 포함</li>
+<li>backend 는 <code>5000</code> 포트 사용 / frontend 는 <code>8080:80</code> 포트 매핑</li>
+<li>두 서비스 모두 <strong>동일한 네트워크</strong> 사용</li>
+<li>backend 는 <code>container_name: backend-service</code></li>
+<li>backend 는 전용 볼륨으로 <code>data.json</code> 을 영구 저장 (마운트 경로 <code>/app/</code>)</li>
+<li>frontend 는 backend 가 먼저 실행되어야 정상 동작 (<code>depends_on</code>)</li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title"><code>docker compose</code> (v2)</p>
-<p>최신 Docker는 띄어쓰기 있는 <code>docker compose</code> 를 씁니다. 파일 이름은 <code>compose.yaml</code> (또는 <code>docker-compose.yml</code>) 둘 다 인식돼요.</p>
+<p class="admonition-title">container_name 은 아래처럼 별도 항목으로 반드시 지정</p>
+<div class="language-yaml highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">services</span><span class="p">:</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">backend</span><span class="p">:</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">skilleat/backend:v4-kb5</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">backend-service</span>
+</code></pre></div>
 </div>
+<hr />
+<h2 id="6">6) 웹 접속 및 데이터 확인<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<ul>
+<li>브라우저에서 <strong><code>http://192.168.56.10:8080</code></strong> (또는 VM 안에서 <code>localhost:8080</code>) 접속 시 페이지가 정상 표시되어야 합니다.</li>
+<li>새 글을 작성하면 화면에 표시되고, backend 내부 JSON 파일(<code>data.json</code>)에 저장되어야 합니다.</li>
+</ul>
+<h2 id="7">7) 추가 검증<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<p><strong>a. backend 컨테이너 안으로 들어가 <code>data.json</code> 확인</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>backend-service<span class="w"> </span>sh
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>cat<span class="w"> </span>data.json
+</code></pre></div>
+<p><strong>b. frontend 와 backend 가 같은 네트워크에 속해 있는지 점검</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>network<span class="w"> </span>inspect<span class="w"> </span>&lt;네트워크이름&gt;
+</code></pre></div>
+<p><strong>c. backend 컨테이너를 삭제 후 다시 만들어도 <code>data.json</code> 이 유지되는지 확인</strong></p>
+<hr />
+<h2 id="_1">✅ 통과 기준<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>http://192.168.56.10:8080</code> 에서 블로그 페이지가 뜬다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 새 글을 작성하면 화면에 보이고 <code>data.json</code> 에 저장된다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <code>docker exec</code> 로 backend 안에서 <code>data.json</code> 내용을 확인할 수 있다</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> backend 컨테이너를 삭제 후 다시 만들어도 글이 그대로 남아 있다</li>
+</ul>
 
 
 
